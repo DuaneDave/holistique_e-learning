@@ -81,6 +81,9 @@ button {
 }
 
 body {
+  color: var(--text-color);
+  font-size: var(--text-md);
+  background: var(--secondary-color);
 }
 
 html {
