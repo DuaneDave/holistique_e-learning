@@ -35,7 +35,7 @@ const navLinks = [
 function Header() {
   const path = usePathname();
 
-  if (path === '/login' || path === '/signin') {
+  if (path === '/login' || path === '/signup') {
     return null;
   }
 

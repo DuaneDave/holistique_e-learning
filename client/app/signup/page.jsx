@@ -1,14 +1,14 @@
 import React from 'react';
 
 import AuthLayout from '@/component/auth/authLayout';
-import SigninForm from '@/component/auth/signinForm';
+import SignupForm from '@/component/auth/signinForm';
 
-function SignIn() {
+function SignUp() {
   return (
     <AuthLayout>
-      <SigninForm />
+      <SignupForm />
     </AuthLayout>
   );
 }
 
-export default SignIn;
+export default SignUp;

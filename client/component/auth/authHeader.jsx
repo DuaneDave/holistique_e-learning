@@ -23,8 +23,8 @@ function AuthHeader({ text }) {
           </li>
           <li>
             <Link
-              href="/signin"
-              className={pathname === '/signin' ? styles.active : ''}
+              href="/signup"
+              className={pathname === '/signup' ? styles.active : ''}
             >
               Register
             </Link>

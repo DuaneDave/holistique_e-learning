@@ -8,7 +8,7 @@ import AuthHeader from './authHeader';
 
 import styles from './auth.module.css';
 
-function SigninForm({ onAlert }) {
+function SignupForm() {
   return (
     <Formik
       initialValues={{
@@ -26,17 +26,27 @@ function SigninForm({ onAlert }) {
           .required('Required'),
       })}
       onSubmit={(values, { setSubmitting }) => {
-        onAlert(true);
-        setTimeout(() => {
-          // alert(JSON.stringify(values, null, 2));
-          onAlert(false);
-          setSubmitting(false);
-        }, 3000);
+        fetch('http://localhost:4000/api/user/signup', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(values),
+        })
+          .then((res) => {
+            setSubmitting(false);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       }}
     >
       {({ handleSubmit }) => (
         <form
-          onSubmit={handleSubmit}
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSubmit();
+          }}
           className={`flex flex-col ${styles.form}`}
         >
           <AuthHeader
@@ -72,4 +82,4 @@ function SigninForm({ onAlert }) {
   );
 }
 
-export default SigninForm;
+export default SignupForm;
