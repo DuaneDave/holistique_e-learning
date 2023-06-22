@@ -13,8 +13,6 @@
 
   --text-md: clamp(0.9rem, 5vw, 1.375rem);
   --text-lg: clamp(0.75rem, 5vw, 1.205rem);
-  /* --text-sm: clamp(1rem, 5vw, 1.625rem);
-  --text-xs: clamp(0.6rem, 5vw, 0.75rem); */
 
   /* ========= Color Scheme =========  */
   --primary-color: #00cbb8;
@@ -22,11 +20,13 @@
   --primary-color-2: #49bbbd;
   --primary-color-2-disabled: hsla(181, 47%, 51%, 50%);
   --primary-color-3: rgba(0, 203, 184, 0.03);
+  --primary-color-4: rgba(73, 187, 189, 0.6);
 
   --secondary-color: #fff;
   --secondary-color-1: #979797;
   --secondary-color-2: #b2b3cf;
   --secondary-color-3: #d9d9d9;
+  --secondary-color-4: #fffefc;
 
   --accent-color-1: #fba333;
   --accent-color-2: rgba(255, 0, 0, 0.6);
@@ -43,7 +43,7 @@
   --tertiary-color--dark-3: rgba(0, 0, 0, 0.1);
 
   --text-color: #696984;
-  --text-color-1: #ffffff;
+  --text-color-1: #fff;
 
   /* ===== Gradients =====  */
   --primary-gradient: linear-gradient(
