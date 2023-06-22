@@ -1,0 +1,32 @@
+.inputField input {
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--primary-color-2);
+  padding: 1rem 2rem;
+}
+
+.inputField input:focus {
+  border: none;
+  outline: 1px solid var(--primary-color);
+}
+
+
+.inputField label {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.rememberMeContainer {
+  justify-content: space-between;
+  font-size: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.rememberMe input {
+  margin-right: 0.5rem;
+}
+
+.invalid {
+  font-size: 0.75rem;
+  color: red;
+  margin-top: 0.5rem;
+}
