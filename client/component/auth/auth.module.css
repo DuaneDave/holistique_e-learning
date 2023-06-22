@@ -1,0 +1,74 @@
+.auth {
+  min-height: 100vh;
+  padding: 1rem;
+  background: var(--secondary-color-4);
+}
+
+.authWrapper {
+  height: 80%;
+}
+
+.authImg {
+  position: relative;
+}
+
+.authImg img {
+  object-fit: cover;
+  border-radius: 29px;
+}
+
+.authImg div {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  color: var(--text-color-1);
+}
+
+.authHeader {
+  color: var(--tertiary-color-dark);
+  font-size: 1rem;
+}
+
+.authHeader h2 {
+  margin-bottom: 1rem;
+  font-weight: var(--regular);
+  font-size: 1rem;
+}
+
+.authHeader ul,
+.form button,
+.authHeader ul a.active {
+  border-radius: var(--radius-pill);
+}
+
+.authHeader ul {
+  background: var(--primary-color-4);
+  color: var(--secondary-color);
+  padding: 1rem 1.5rem;
+}
+
+.authHeader ul a.active {
+  background: var(--primary-color-2);
+  color: var(--text-color-1);
+  padding: 0.5rem 3rem;
+}
+
+.authHeader p {
+  margin: 2rem 0 1.5rem;
+}
+
+.form {
+  padding: 2rem 5rem;
+}
+
+.form button {
+  padding: 0.8rem 5rem;
+  margin-left: auto;
+  background: var(--primary-color-2);
+  margin-top: 2rem;
+  color: var(--secondary-color);
+}
+
+.inputWrapper {
+  gap: 1.5rem;
+}
