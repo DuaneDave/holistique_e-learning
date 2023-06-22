@@ -10,6 +10,7 @@
 
 .authImg {
   position: relative;
+  display: none;
 }
 
 .authImg img {
@@ -58,7 +59,7 @@
 }
 
 .form {
-  padding: 2rem 5rem;
+  padding: 2rem 0;
 }
 
 .form button {
@@ -71,4 +72,14 @@
 
 .inputWrapper {
   gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .authImg {
+    display: block;
+  }
+
+  .form {
+    padding: 2rem 5rem;
+  }
 }
