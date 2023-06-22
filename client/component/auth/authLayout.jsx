@@ -3,7 +3,8 @@
 import React from 'react';
 import Image from 'next/image';
 
-import authImage from '@/public/assets/images/professionals.png';
+import authImage from '@/public/assets/images/auth.png';
+// import authImage from '@/public/assets/images/professionals.png';
 
 import styles from './auth.module.css';
 
