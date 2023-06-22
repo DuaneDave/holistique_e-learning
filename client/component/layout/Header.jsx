@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 import logo from '../../public/assets/logo.png';
 
@@ -33,28 +33,35 @@ const navLinks = [
 ];
 
 function Header() {
-  const router = useRouter();
+  const path = usePathname();
 
-  console.log(router);
+  if (path === '/login' || path === '/signin') {
+    return null;
+  }
 
   return (
     <header className={`full-width ${styles.navigation}`}>
       <nav className={`flex align-y full-width container`}>
         <Link href="/">
-          <Image src={logo} />
+          <Image src={logo} alt="logo" />
         </Link>
 
         <div className={`flex align-y ${styles.navigationInfo}`}>
           <ul className="flex gap">
             {navLinks.map((link, index) => (
               <li key={index}>
-                <Link href={link.path}>{link.name}</Link>
+                <Link
+                  href={link.path}
+                  className={`${path === link.path ? styles.active : ''}`}
+                >
+                  {link.name}
+                </Link>
               </li>
             ))}
           </ul>
 
           <span className={`flex center ${styles.user}`}>
-            <Image src={logo} width={50} height={50} />
+            <Image src={logo} width={50} height={50} alt="current user" />
             <span>
               <p>John Doe</p>
             </span>
