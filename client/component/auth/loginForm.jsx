@@ -1,25 +1,43 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
+import { useRouter } from 'next/navigation';
 
 import Input, { RememberMe } from '../inputs/inputs';
 import AuthHeader from './authHeader';
+import { AuthContext } from '@store/authContext';
 
 import styles from './auth.module.css';
 
 function LoginForm() {
   const [rememberMe, setRememberMe] = useState(false);
+  const [formData, setFormData] = useState({});
+  const { user, login } = useContext(AuthContext);
+  const router = useRouter();
 
-  console.log(rememberMe)
+  const initialFormValues = {
+    email: '',
+    password: '',
+  };
+
+  useEffect(() => {
+    const auth = JSON.parse(localStorage.getItem('auth'));
+
+    if (auth) {
+      setFormData(auth);
+
+      setRememberMe(true);
+
+      initialFormValues.email = auth.email;
+      initialFormValues.password = auth.password;
+    }
+  }, []);
 
   return (
     <Formik
-      initialValues={{
-        email: '',
-        password: '',
-      }}
+      initialValues={initialFormValues}
       validationSchema={Yup.object({
         email: Yup.string().email('Invalid email address').required('Required'),
         password: Yup.string()
@@ -27,16 +45,15 @@ function LoginForm() {
           .required('Required'),
       })}
       onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          // alert(JSON.stringify(values, null, 2));
-          onAlert(false);
-          setSubmitting(false);
-        }, 3000);
+        login(values, rememberMe, setSubmitting);
       }}
     >
       {({ handleSubmit }) => (
         <form
-          onSubmit={handleSubmit}
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSubmit();
+          }}
           className={`flex flex-col ${styles.form}`}
         >
           <AuthHeader
@@ -50,16 +67,18 @@ function LoginForm() {
               name="email"
               type="email"
               placeholder="Enter Your Email Address"
+              value={formData.email}
             />
             <Input
               label="password"
               name="password"
               type="password"
               placeholder="Enter Your Password"
+              value={formData.password}
             />
           </div>
 
-          <RememberMe handleRememberMe={setRememberMe} />
+          <RememberMe handleRememberMe={setRememberMe} checked={rememberMe} />
 
           <button type="submit">Submit</button>
         </form>

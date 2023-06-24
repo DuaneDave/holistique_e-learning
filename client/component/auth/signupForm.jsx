@@ -1,14 +1,17 @@
 'use client';
-
+import { useContext } from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 
 import Input from '../inputs/inputs';
 import AuthHeader from './authHeader';
+import { AuthContext } from '@store/authContext';
 
 import styles from './auth.module.css';
 
 function SignupForm() {
+  const { user, signup } = useContext(AuthContext);
+
   return (
     <Formik
       initialValues={{
@@ -26,19 +29,7 @@ function SignupForm() {
           .required('Required'),
       })}
       onSubmit={(values, { setSubmitting }) => {
-        fetch('http://localhost:4000/api/user/signup', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(values),
-        })
-          .then((res) => {
-            setSubmitting(false);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
+        signup(values, setSubmitting);
       }}
     >
       {({ handleSubmit }) => (
