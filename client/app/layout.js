@@ -1,6 +1,8 @@
 import './app.css';
 import { Poppins } from 'next/font/google';
+
 import Header from '@/component/layout/Header';
+import AuthProvider from '@/store/authContext';
 
 const inter = Poppins({
   weight: ['400', '500', '600', '700'],
@@ -16,8 +18,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
-        {children}
+        <AuthProvider>
+          <Header />
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );
