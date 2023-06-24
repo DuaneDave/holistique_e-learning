@@ -42,7 +42,7 @@ export function TextArea({ label, ...props }) {
   );
 }
 
-export function RememberMe({ handleRememberMe }) {
+export function RememberMe({ handleRememberMe, checked }) {
   return (
     <div className={`flex align-y ${styles.rememberMeContainer}`}>
       <div className={`flex align-y ${styles.rememberMe}`}>
@@ -51,6 +51,7 @@ export function RememberMe({ handleRememberMe }) {
           name="rememberMe"
           id="rememberMe"
           onChange={(e) => handleRememberMe(e.target.checked)}
+          checked={checked}
         />
         <label htmlFor="rememberMe">Remember me</label>
       </div>
