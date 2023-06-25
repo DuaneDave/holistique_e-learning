@@ -1,5 +1,9 @@
 .navigation {
   padding: 0 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
 }
 
 .navigation nav {
@@ -8,16 +12,17 @@
 }
 
 .navigation nav a img {
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 40px;
 }
 
 .navigationInfo {
   font-size: 1rem;
+  color: var(--secondary-color);
 }
 
 .navigationInfo ul {
-  margin-right: 4rem;
+  margin-right: 3rem;
 }
 
 .navigationInfo li a {
@@ -32,11 +37,12 @@
   width: 100%;
   height: 4px;
   border-radius: var(--radius-pill);
-  background: var(--tertiary-color-2);
+  background: var(--accent-color-1);
 }
 
 .hamburger {
   display: none;
+  margin-left: 1rem;
 }
 
 .hamburger span {
@@ -45,12 +51,48 @@
   height: 2px;
   margin-bottom: 4px;
   position: relative;
-  background: black;
+  background: var(--secondary-color);
   border-radius: var(--radius-pill);
 }
 
-.user {
+.user button {
   gap: 0.5rem;
+  margin-left: 0.3rem;
+  font-size: 0.8rem;
+  color: var(--secondary-color);
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 3rem;
+  right: 1rem;
+  background: var(--secondary-color);
+  color: var(--tertiary-color-dark-1);
+  text-align: right;
+  padding: 1rem 2rem;
+  font-size: 0.75rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.dropdown button {
+  padding: 0.5rem 3rem;
+  background: var(--tertiary-color-dark);
+  color: var(--secondary-color);
+  border-radius: var(--radius-pill);
+}
+
+.auth a {
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--radius-pill);
+  background: rgba(0, 0, 0, 0.3);
+  /* background: rgba(255, 255, 255, 0.3); */
+  color: var(--text-color-1);
+}
+
+.auth a:first-of-type {
+  background: var(--secondary-color);
+  color: var(--tertiary-color--dark);
 }
 
 @media (max-width: 968px) {
@@ -61,11 +103,22 @@
   .navigationInfo ul {
     position: fixed;
     flex-direction: column;
-    top: 0;
+    align-items: center;
+    top: -100%;
     right: 0;
     background: grey;
     height: 100dvh;
-    width: 50%;
+    width: 100%;
     margin: 0;
+    font-size: 1.5rem;
+    padding: 8rem 1rem;
+    transform: translateY(-100%);
+    transition: all 1s ease-in-out;
+    background: var(--primary-color);
+  }
+
+  .navigationInfo ul.toggleNav {
+    top: 0;
+    transform: translateY(0);
   }
 }
