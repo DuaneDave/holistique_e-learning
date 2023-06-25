@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
 export const AuthContext = createContext();
@@ -8,6 +8,15 @@ export const AuthContext = createContext();
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const router = useRouter();
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem('user'));
+
+    if (user) {
+      setUser(user);
+      router.push('/');
+    }
+  }, []);
 
   const signup = async (payload, callback) => {
     try {
@@ -45,11 +54,13 @@ export function AuthProvider({ children }) {
       if (res.status === 400) {
         throw new Error(res.message);
       }
-  
+
       if (rememberMe) {
         localStorage.setItem('auth', JSON.stringify(data));
       }
-      
+
+      localStorage.setItem('user', JSON.stringify(res));
+
       setUser(data);
       callback(false);
       router.push('/');
@@ -67,6 +78,7 @@ export function AuthProvider({ children }) {
         },
       });
 
+      localStorage.removeItem('auth');
       setUser(null);
     } catch (error) {
       console.log(error.message);
