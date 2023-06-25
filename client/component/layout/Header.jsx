@@ -1,11 +1,16 @@
 'use client';
 
-import React from 'react';
+import { useContext, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
+import { AuthContext } from '@/store/authContext';
+import Dropdown from './Dropdown';
+
 import logo from '../../public/assets/logo.png';
+import avatar from '../../public/assets/icons/avatar.png';
+import arrowDown from '../../public/assets/icons/chevron down.png';
 
 import styles from './header.module.css';
 
@@ -33,6 +38,11 @@ const navLinks = [
 ];
 
 function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [show, setShow] = useState(false);
+
+  const { user } = useContext(AuthContext);
+
   const path = usePathname();
 
   if (path === '/login' || path === '/signup') {
@@ -47,7 +57,7 @@ function Header() {
         </Link>
 
         <div className={`flex align-y ${styles.navigationInfo}`}>
-          <ul className="flex gap">
+          <ul className={`flex gap ${isOpen ? styles.toggleNav : ''}`}>
             {navLinks.map((link, index) => (
               <li key={index}>
                 <Link
@@ -60,14 +70,29 @@ function Header() {
             ))}
           </ul>
 
-          <span className={`flex center ${styles.user}`}>
-            <Image src={logo} width={50} height={50} alt="current user" />
-            <span>
-              <p>John Doe</p>
-            </span>
-          </span>
+          {user && (
+            <span className={`flex center ${styles.user}`}>
+              <Image src={avatar} width={30} height={30} alt="current user" />
+              <button className="flex align-y" onClick={() => setShow(!show)}>
+                <p>John Doe</p>
 
-          <button className={styles.hamburger}>
+                <Image src={arrowDown} alt="arrow down" />
+              </button>
+              {show && <Dropdown />}
+            </span>
+          )}
+
+          {!user && (
+            <div className={`flex center gap ${styles.auth}`}>
+              <Link href="/login">Login</Link>
+              <Link href="/signup">Sign Up</Link>
+            </div>
+          )}
+
+          <button
+            className={styles.hamburger}
+            onClick={() => setIsOpen(!isOpen)}
+          >
             <span></span>
             <span></span>
             <span></span>
