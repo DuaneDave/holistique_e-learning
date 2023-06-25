@@ -3,7 +3,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 5;
 }
 
 .navigation nav {
@@ -98,6 +98,7 @@
 @media (max-width: 968px) {
   .hamburger {
     display: block;
+    z-index: 11;
   }
 
   .navigationInfo ul {
@@ -115,6 +116,7 @@
     transform: translateY(-100%);
     transition: all 1s ease-in-out;
     background: var(--primary-color);
+    z-index: 10;
   }
 
   .navigationInfo ul.toggleNav {
