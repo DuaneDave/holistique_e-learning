@@ -3,7 +3,7 @@
     "paths": {
       "@/*": ["./*"],
       "@components/*": ["./components/*"],
-      "@public/assests/*": ["./public/assests/*"],
+      "@public/*": ["./public/assests/*"],
       "@store/*": ["./store/*"],
     }
   }
