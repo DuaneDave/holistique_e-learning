@@ -60,3 +60,39 @@
   opacity: 1;
   transition-delay: 0ms;
 }
+
+.cardSection {
+  margin-top: 2rem;
+  background: rgba(101, 218, 255, 0.08);
+  padding: 4rem 0;
+}
+
+.card > img {
+  border-radius: 0 0 2.5rem 0 !important;
+}
+
+.card div {
+  position: relative;
+}
+
+.card div img {
+  margin: -1rem;
+}
+
+.card:nth-of-type(even) > img {
+  order: 2;
+}
+
+.card:nth-of-type(even) h2 {
+  color: var(--primary-color) !important;
+}
+
+.card:nth-of-type(even) h2 span {
+  color: var(--tertiary-color) !important;
+}
+
+@media (min-width: 768px) {
+  .cardContainer {
+    gap: 7rem;
+  }
+}
