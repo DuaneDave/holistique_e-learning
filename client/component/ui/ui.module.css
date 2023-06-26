@@ -20,10 +20,15 @@
 
 .portraitCard {
   position: relative;
+  border-radius: 0.5rem;
+  padding: 0,5rem 0.3rem;
+  background: var(--secondary-color-4);
 }
 
 .portraitCard h3 {
-  font-size: var(--heading-4);
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: var(--tertiary-color-dark-1);
+  font-weight: 500;
 }
 
 .portraitCard p {
