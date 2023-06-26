@@ -14,6 +14,10 @@
   padding-inline: 1rem;
 }
 
+.swiper-wrapper {
+  padding-block: 2rem;
+}
+
 .flex {
   display: flex;
 }
@@ -133,7 +137,9 @@
   .flex-fluid {
     flex-direction: row;
   }
+}
 
+@media (min-width: 968px) {
   .grid-2 {
     grid-template-columns: repeat(2, 1fr);
   }

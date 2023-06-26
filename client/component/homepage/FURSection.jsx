@@ -16,13 +16,13 @@ import styles from './homepage.module.css';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-function FUR() {
+function FURSection() {
   return (
     <section>
       <div className={`container ${styles.fur}`}>
         <h2>Frequently used resources</h2>
 
-        <div className="">
+        <div>
           <Swiper
             slidesPerView={2.5}
             spaceBetween={40}
@@ -92,4 +92,4 @@ function FUR() {
   );
 }
 
-export default FUR;
+export default FURSection;
