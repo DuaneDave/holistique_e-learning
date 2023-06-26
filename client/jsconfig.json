@@ -3,8 +3,9 @@
     "paths": {
       "@/*": ["./*"],
       "@components/*": ["./components/*"],
-      "@public/*": ["./public/assests/*"],
+      "@public/*": ["./public/*"],
       "@store/*": ["./store/*"],
+      "@utils/*": ["./utils/*"]
     }
   }
 }
