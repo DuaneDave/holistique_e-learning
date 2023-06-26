@@ -11,7 +11,7 @@
   --heading-3: clamp(1rem, 5vw, 2rem);
   --heading-4: clamp(0.95rem, 5vw, 1.7rem);
 
-  --text-md: clamp(0.9rem, 5vw, 1.375rem);
+  --text-md: clamp(1rem, 5vw, 1.3rem);
   --text-lg: clamp(0.75rem, 5vw, 1.205rem);
 
   /* ========= Color Scheme =========  */
