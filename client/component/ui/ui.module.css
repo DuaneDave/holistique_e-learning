@@ -17,3 +17,16 @@
   padding: 0.5 3rem;
   border-radius: var(--radius-2);
 }
+
+.portraitCard {
+  position: relative;
+}
+
+.portraitCard h3 {
+  font-size: var(--heading-4);
+}
+
+.portraitCard p {
+  font-size: 1rem;
+  color: var(--secondary-color-1);
+}

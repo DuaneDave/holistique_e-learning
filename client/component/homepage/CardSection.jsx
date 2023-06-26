@@ -37,7 +37,11 @@ function CardSection() {
                 {card.heading1}
                 <span> {card.heading2}</span>
               </h2>
-              <p>{card.description}</p>
+              <p>
+                {card.description}
+
+                <button>Learn more</button>
+              </p>
             </div>
           </DisplayCard>
         ))}

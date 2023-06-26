@@ -10,4 +10,12 @@ function DisplayCard({ className, children}) {
   )
 }
 
+function Card({ className, children }) {
+  return (
+    <div className={`flex flex-col ${styles.portraitCard} ${className}`}>
+      {children}
+    </div>
+  )
+}
+
 export default DisplayCard
