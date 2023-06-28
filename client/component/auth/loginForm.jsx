@@ -28,8 +28,8 @@ function LoginForm() {
 
       setRememberMe(true);
 
-      // initialFormValues.email = auth.email;
-      // initialFormValues.password = auth.password;
+      initialFormValues.email = auth.email;
+      initialFormValues.password = auth.password;
     }
   }, []);
 
