@@ -72,13 +72,13 @@ export function AuthProvider({ children }) {
   const logout = async () => {
     try {
       await fetch('http://localhost:4000/api/user/logout', {
-        method: 'POST',
+        method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
         },
       });
 
-      localStorage.removeItem('auth');
+      localStorage.removeItem('user');
       setUser(null);
     } catch (error) {
       console.log(error.message);
