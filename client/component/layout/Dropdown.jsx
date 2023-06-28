@@ -8,7 +8,7 @@ import { AuthContext } from '@/store/authContext';
 import styles from './header.module.css';
 
 function Dropdown({ ...props }) {
-  const { user, logout } = useContext(AuthContext);
+  const { logout } = useContext(AuthContext);
 
   return (
     <div className={`flex flex-col gap ${styles.dropdown}`} {...props}>
