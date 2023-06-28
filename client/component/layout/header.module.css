@@ -83,16 +83,15 @@
 }
 
 .auth a {
-  padding: 0.5rem 1.5rem;
+  padding: 0.3rem 1.5rem;
   border-radius: var(--radius-pill);
-  background: rgba(0, 0, 0, 0.3);
-  /* background: rgba(255, 255, 255, 0.3); */
-  color: var(--text-color-1);
+  background: rgba(255, 255, 255, 0.3);
+  font-size: 0.9rem;
 }
 
 .auth a:first-of-type {
-  background: var(--secondary-color);
-  color: var(--tertiary-color--dark);
+  background: conic-gradient(from 90deg at 50% 100%, #fff 0deg, #fff 360deg);
+  color: var(--tertiary-color-dark) !important;
 }
 
 @media (max-width: 968px) {
@@ -148,7 +147,6 @@
   height: 100%;
   border-radius: var(--radius-pill);
   background: var(--tertiary-color-1);
-
 }
 
 .logo span {

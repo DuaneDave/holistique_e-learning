@@ -1,11 +1,20 @@
-import React from 'react';
+'use client';
+
+import { useContext } from 'react';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 import logo from '@public/assets/logo.png';
 
 import styles from './header.module.css';
 
 function Footer() {
+  const path = usePathname();
+
+  if (path === '/login' || path === '/signup') {
+    return null;
+  }
+
   return (
     <footer className={`flex flex-col center ${styles.footer}`}>
       <div className={`flex center ${styles.logo}`}>
