@@ -3,7 +3,7 @@ import React from 'react';
 import HeroSection from '@/component/resources/HeroSection';
 import CardSection from '@/component/resources/CardSection';
 
-function page() {
+function Resources() {
   return (
     <>
       <HeroSection />
@@ -12,4 +12,4 @@ function page() {
   );
 }
 
-export default page;
+export default Resources;
