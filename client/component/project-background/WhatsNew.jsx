@@ -40,7 +40,7 @@ function WhatsNew() {
                 spaceBetween: 20,
               },
             }}
-            className="mySwiper specific"
+            className="mySwiper"
             modules={[Navigation]}
             navigation={{
               nextEl: '.next',
