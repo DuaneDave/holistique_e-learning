@@ -27,9 +27,6 @@ function LoginForm() {
       setFormData(auth);
 
       setRememberMe(true);
-
-      initialFormValues.email = auth.email;
-      initialFormValues.password = auth.password;
     }
   }, []);
 
@@ -65,14 +62,14 @@ function LoginForm() {
               name="email"
               type="email"
               placeholder="Enter Your Email Address"
-              value={formData.email}
+              // value={formData.email}
             />
             <Input
               label="password"
               name="password"
               type="password"
               placeholder="Enter Your Password"
-              value={formData.password}
+              // value={formData.password}
             />
           </div>
 
