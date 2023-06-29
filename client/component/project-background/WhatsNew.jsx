@@ -79,7 +79,10 @@ function WhatsNew() {
               </SwiperSlide>
             ))}
 
-            <div className={`flex gap ${styles.slideControl}`}>
+            <div
+              aria-label="slide controller"
+              className={`flex gap ${styles.slideControl}`}
+            >
               <div aria-label="previous" className="circle prev flex center">
                 <Image src={right} alt="arrow-back" />
               </div>
