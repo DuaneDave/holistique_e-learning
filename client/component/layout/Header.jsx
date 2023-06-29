@@ -21,7 +21,7 @@ const navLinks = [
   },
   {
     name: 'Project Background',
-    path: '/projects',
+    path: '/project-background',
   },
   {
     name: 'Resource Centre',
@@ -50,7 +50,9 @@ function Header() {
   }
 
   return (
-    <header className={`full-width ${styles.navigation}`}>
+    <header className={`full-width ${styles.navigation} ${
+      path === '/project-background' || path === '/resources' || path === '/courses' || path === '/community' ? styles.navBg : ''
+    }`}>
       <nav className={`flex align-y full-width container`}>
         <Link href="/">
           <Image src={logo} alt="logo" />
