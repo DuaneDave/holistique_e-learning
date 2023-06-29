@@ -1,0 +1,88 @@
+.description h1 {
+  color: var(--tertiary-color);
+  font-size: var(--heading-2);
+}
+
+.description img {
+  margin: 0 -0 -2rem -2rem;
+}
+
+.description p {
+  color: var(--tertiary-color-dark);
+}
+
+.description hr {
+  margin-block: 3rem 1.5rem;
+}
+
+.whatsNewContainer {
+  background: rgba(157, 204, 255, 0.2);
+  padding-inline: 1rem;
+}
+
+.whatsNew {
+  padding: 2rem 0 3rem 0;
+}
+
+.whatsNew h2 {
+  font-weight: var(--medium);
+  font-size: var(--heading-4);
+  color: var(--tertiary-color-dark);
+  margin-bottom: 1rem;
+}
+
+.card {
+  background: var(--secondary-color);
+  padding: 1rem;
+  border-radius: var(--radius-1);
+}
+
+.card > div p .card > div h3 {
+  max-width: 40ch;
+}
+
+.card > div h3 {
+  line-height: 1.3;
+  margin-block: 1rem 1.5rem;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+.card > div p {
+  margin-bottom: 1.5rem;
+}
+
+.card > div > div {
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: inherit;
+}
+
+.slideControl {
+  margin-left: auto;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+}
+
+.slideControl div {
+  background: var(--primary-color-2);
+  border-radius: 0 !important;
+  width: 40px;
+  height: 40px;
+}
+
+.swiper-button-disabled {
+  opacity: 0.5;
+}
+
+.slideControl div:first-of-type {
+  transform: rotate(180deg);
+}
+
+@media (min-width: 768px) {
+  .whatsNewContainer,
+  .description {
+    padding: 0 2rem;
+  }
+}

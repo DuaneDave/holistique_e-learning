@@ -6,6 +6,27 @@
   padding: 1rem 0;
 }
 
+.navBg {
+  background: white;
+  padding: 0.5rem 0 1rem 0;
+  position: relative;
+}
+
+.navBg nav::after {
+  position: absolute;
+  content: '';
+  bottom: -0.5rem;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(151, 151, 151, 0.50);
+}
+
+.navBg .user button,
+.navBg .navigationInfo ul {
+  color: rgba(0, 0, 0, 0.80);
+}
+
 .navigation nav {
   justify-content: space-between;
   position: relative;
@@ -78,7 +99,7 @@
 .dropdown button {
   padding: 0.5rem 3rem;
   background: var(--tertiary-color-dark);
-  color: var(--secondary-color);
+  color: var(--secondary-color) !important;
   border-radius: var(--radius-pill);
 }
 
