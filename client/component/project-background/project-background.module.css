@@ -17,11 +17,10 @@
 
 .whatsNewContainer {
   background: rgba(157, 204, 255, 0.2);
-  padding-inline: 1rem;
 }
 
 .whatsNew {
-  padding: 2rem 0 3rem 0;
+  padding-block: 2rem 3rem;
 }
 
 .whatsNew h2 {
@@ -75,11 +74,4 @@
 
 .slideControl div:first-of-type {
   transform: rotate(180deg);
-}
-
-@media (min-width: 768px) {
-  .whatsNewContainer,
-  .description {
-    padding: 0 2rem;
-  }
 }

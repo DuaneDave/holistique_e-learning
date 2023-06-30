@@ -19,12 +19,12 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background: rgba(151, 151, 151, 0.50);
+  background: rgba(151, 151, 151, 0.5);
 }
 
 .navBg .user button,
 .navBg .navigationInfo ul {
-  color: rgba(0, 0, 0, 0.80);
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .navigation nav {
@@ -38,7 +38,7 @@
 }
 
 .navigationInfo {
-  font-size: 1rem;
+  font-size: clamp(1rem, 1.2vw, 2rem);
   color: var(--secondary-color);
 }
 
