@@ -3,6 +3,7 @@
   padding: 2rem 0;
 }
 
+.faqSection h2,
 .availableModule h2,
 .courses h1 {
   color: var(--tertiary-color-dark);
@@ -81,10 +82,6 @@
   transform: rotate(180deg);
 }
 
-.availableModule {
-  padding-bottom: 2rem;
-}
-
 .modules {
   gap: 2rem;
 }
@@ -116,6 +113,26 @@
   margin: 0 0 -2rem -2rem;
   width: 80px;
   height: 80px;
+}
+
+.faqSection {
+  background: #EBF5FF;
+  border-radius: var(--radius-1);
+  padding: 5rem 3em;
+  margin-block: 4rem;
+}
+
+.faqSection p {
+  color: rgba(0, 0, 0, 0.90);
+  padding-block: 1.2rem 2rem;
+}
+
+.faqSection a {
+  background: var(--primary-color-2);
+  color: var(--secondary-color);
+  padding: 0.5rem 2rem;
+  border-radius: var(--radius-2);
+  font-size: 1rem;
 }
 
 @media (min-width: 768px) {
