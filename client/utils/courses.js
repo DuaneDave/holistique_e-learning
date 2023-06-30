@@ -32,12 +32,21 @@ const coursesProgress = [
     author_image: avatar,
     author: 'John Doe',
   },
+  {
+    id: 4,
+    title: 'Skin and soft tissue',
+    total_lessons: 6,
+    completed_lessons: 5,
+    course_image: course3,
+    author_image: avatar,
+    author: 'John Doe',
+  },
 ];
 
 export const availableModule = [
   {
     id: 1,
-    title: 'Stigma and discrimination in healthcare settings',
+    title: 'Stigma and discrimination in healthcare',
     module_count: 'Nine lessons contained in this module',
     duration: '1hr 45mins',
     module_image: course4,
