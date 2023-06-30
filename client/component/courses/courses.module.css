@@ -1,17 +1,21 @@
 .coursesContainer {
   background: rgba(157, 204, 255, 0.2);
-  padding: 2rem 1rem;
+  padding: 2rem 0;
 }
 
-.courses h2 {
+.availableModule h2,
+.courses h1 {
   color: var(--tertiary-color-dark);
   font-weight: var(--medium);
   font-size: var(--heading-4);
 }
+
+.module,
 .card {
   background: var(--secondary-color);
   padding: 1rem;
 }
+
 .cardContent {
   padding: 1rem 0;
 }
@@ -33,6 +37,10 @@
   width: 30px;
   height: 30px;
   margin-right: 0.5rem;
+}
+
+.cardContent p {
+  color: var(--primary-color) !important;
 }
 
 .courseProgress p {
@@ -71,4 +79,47 @@
 
 .slideControl div:first-of-type {
   transform: rotate(180deg);
+}
+
+.availableModule {
+  padding-bottom: 2rem;
+}
+
+.modules {
+  gap: 2rem;
+}
+
+.module {
+  box-shadow: 0px 18px 30px 0px rgba(47, 50, 125, 0.25);
+}
+
+.module button {
+  align-self: flex-end;
+  margin-top: 1.5rem;
+  color: var(--accent-color-2);
+}
+
+.duration {
+  justify-content: space-between;
+  font-size: 1rem;
+}
+
+.duration p {
+  color: var(--tertiary-color-dark);
+}
+
+.duration span > span {
+  color: #fdb022;
+}
+
+.availableModule > img {
+  margin: 0 0 -2rem -2rem;
+  width: 80px;
+  height: 80px;
+}
+
+@media (min-width: 768px) {
+  .modules {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
