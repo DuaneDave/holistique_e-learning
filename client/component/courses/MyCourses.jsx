@@ -18,7 +18,7 @@ function MyCourses() {
   return (
     <section className={styles.coursesContainer}>
       <div className={`container ${styles.courses}`}>
-        <h2>Welcome back, ready to continue learning?</h2>
+        <h1>Welcome back, ready to continue learning?</h1>
 
         <div>
           <Swiper
