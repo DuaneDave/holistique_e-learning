@@ -60,10 +60,18 @@
   transition-delay: 0ms;
 }
 
+.cardContainer {
+  gap: 3rem;
+}
+
 .cardSection {
   margin-top: 2rem;
   background: rgba(101, 218, 255, 0.08);
   padding: 4rem 0;
+}
+
+.card {
+  gap: 3rem;
 }
 
 .card > img {
@@ -86,20 +94,12 @@
   border-radius: 8px !important;
 }
 
-.card:nth-of-type(even) > img {
-  order: 2;
-}
-
 .card:nth-of-type(even) h2 {
   color: var(--primary-color) !important;
 }
 
 .card:nth-of-type(even) h2 span {
   color: var(--tertiary-color) !important;
-}
-
-.fur > div {
-  padding-block: 3rem;
 }
 
 .fur h2 {
@@ -132,7 +132,7 @@
 
 .content {
   justify-content: space-between;
-  grid-template-columns: 1fr 0.5fr !important;
+  padding: 1rem;
 }
 
 .content h3 {
@@ -222,4 +222,28 @@
     padding: 1rem 4rem;
     margin-inline: 2rem;
   }
+}
+
+@media (min-width: 968px) {
+  .card:nth-of-type(even) > img {
+    order: 2;
+  }
+
+  .content {
+    grid-template-columns: 1fr 0.5fr;
+  }
+}
+
+@media ((min-height: 800px)) {
+  .heroContainer {
+    height: 90dvh;
+  }
+  
+}
+
+@media ((min-height: 900px)) {
+  .heroContainer {
+    height: 60dvh;
+  }
+  
 }

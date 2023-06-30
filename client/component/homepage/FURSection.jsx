@@ -27,7 +27,7 @@ function FURSection() {
             slidesPerView={2.5}
             spaceBetween={40}
             breakpoints={{
-              320: {
+              280: {
                 slidesPerView: 1,
                 spaceBetween: 20,
               },
@@ -56,7 +56,7 @@ function FURSection() {
                     className="full-width full-height"
                   />
 
-                  <div className={`grid grid-2 ${styles.content}`}>
+                  <div className={`grid ${styles.content}`}>
                     <div>
                       <h3>{fur.title}</h3>
                       <p>{fur.content}</p>

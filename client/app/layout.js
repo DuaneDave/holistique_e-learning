@@ -2,6 +2,7 @@ import './app.css';
 import { Poppins } from 'next/font/google';
 
 import Header from '@/component/layout/Header';
+import Footer from '@/component/layout/Footer';
 import AuthProvider from '@/store/authContext';
 
 const inter = Poppins({
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
         <AuthProvider>
           <Header />
           {children}
+          <Footer />
         </AuthProvider>
       </body>
     </html>
