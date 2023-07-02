@@ -1,33 +1,27 @@
 'use client';
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 
 import Input from '../inputs/inputs';
-import styles from './auth.module.css'
-
+import styles from './auth.module.css';
 
 function NewsLetter() {
   const [formData, setFormData] = useState({});
 
+  const initialFormValues = {
+    email: '',
+  };
 
-const initialFormValues = {
-  email: ''
-}
+  useEffect(() => {
+    const auth = JSON.parse(localStorage.getItem('auth'));
 
-
-
-useEffect(()=> {
-const auth = JSON.parse(localStorage.getItem('auth'));
-
-  if(auth){
-    setFormData(auth);
-    initialFormValues.email = auth.email
-  }
-  
-}, []);
-
+    if (auth) {
+      setFormData(auth);
+      initialFormValues.email = auth.email;
+    }
+  }, []);
 
   return (
     <Formik
@@ -35,31 +29,32 @@ const auth = JSON.parse(localStorage.getItem('auth'));
       validationSchema={Yup.object({
         email: Yup.string().email('invalid Email Address').required('required'),
       })}
-      onSubmit={(values, {setSubmitting}) => {
-        signup(values, setSubmitting)
+      onSubmit={(values, { setSubmitting }) => {
+        signup(values, setSubmitting);
       }}
     >
-   {({handleSubmit})=> (
-    <form
-    className={` flex center gap ${styles.newsLetter}`}
-     onSubmit={(e)=>{
-      e.preventDefault()
-      handleSubmit()
-    }
-     }
-    >
-      <Input
-        type="email"
-        name="email"
-        placeholder="Your Email"
-        formData={formData.email}
-        className={`rounded ${styles.email}`}
-      />
-      <button className=" rounded border-grey" type='submit'>subscribe</button>
-    </form>
-   )}
+      {({ handleSubmit }) => (
+        <form
+          className={` flex center gap ${styles.newsLetter}`}
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSubmit();
+          }}
+        >
+          <Input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            formData={formData.email}
+            className={`rounded ${styles.email}`}
+          />
+          <button className=" rounded border-grey" type="submit">
+            subscribe
+          </button>
+        </form>
+      )}
     </Formik>
-  )
+  );
 }
 
-export default NewsLetter
+export default NewsLetter;
