@@ -1,0 +1,49 @@
+.faqHeader {
+  background: #252641;
+}
+
+.faqHeader div {
+  color: var(--secondary-color);
+  padding: 1rem;
+}
+
+.faqHeader h1 {
+  margin-inline: auto;
+}
+
+.faqHeader svg {
+  font-size: 1.5rem;
+}
+
+.faqBody {
+  grid-template-columns: 0.25fr 1fr;
+  height: calc(100dvh - 5rem);
+}
+
+.main,
+.sidebar {
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.main {
+  background: rgba(133, 182, 255, 0.2);
+  color: var(--tertiary-color-dark);
+  font-size: 1rem;
+}
+
+.sidebar li button {
+  font-size: clamp(1rem, 1vw, 1.5rem);
+}
+
+.sidebar li {
+  margin-bottom: 1.5rem;
+}
+
+.sidebar li button {
+  text-align: left;
+}
+
+.active {
+  color: #2c93f1;
+}
