@@ -45,14 +45,21 @@ function Header() {
 
   const path = usePathname();
 
-  if (path === '/login' || path === '/signup') {
+  if (path === '/login' || path === '/signup' || path === '/faq') {
     return null;
   }
 
   return (
-    <header className={`full-width ${styles.navigation} ${
-      path === '/project-background' || path === '/resources' || path === '/courses' || path === '/community' ? styles.navBg : ''
-    }`}>
+    <header
+      className={`full-width ${styles.navigation} ${
+        path === '/project-background' ||
+        path === '/resources' ||
+        path === '/courses' ||
+        path === '/community'
+          ? styles.navBg
+          : ''
+      }`}
+    >
       <nav className={`flex align-y full-width container`}>
         <Link href="/">
           <Image src={logo} alt="logo" />

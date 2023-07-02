@@ -11,7 +11,7 @@ import styles from './header.module.css';
 function Footer() {
   const path = usePathname();
 
-  if (path === '/login' || path === '/signup') {
+  if (path === '/login' || path === '/signup' || path === '/faq') {
     return null;
   }
 
