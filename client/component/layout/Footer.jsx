@@ -1,12 +1,12 @@
 'use client';
 
-import { useContext } from 'react';
-import Image from 'next/image';
+import Image from 'next/image'
+import React from 'react'
 import { usePathname } from 'next/navigation';
 
-import logo from '@public/assets/logo.png';
-
-import styles from './header.module.css';
+import FooterLogo from '../../public/assets/images/footerIcon.svg';
+import styles from './footer.module.css';
+import NewsLetter from '../auth/newsLetter';
 
 function Footer() {
   const path = usePathname();
@@ -14,32 +14,24 @@ function Footer() {
   if (path === '/login' || path === '/signup' || path === '/faq') {
     return null;
   }
-
   return (
-    <footer className={`flex flex-col center ${styles.footer}`}>
-      <div className={`flex center ${styles.logo}`}>
-        <Image
-          src={logo}
-          alt="company logo"
-          className="full-width full-height"
-        />
-        <span>
-          <p>
-            Live chat with <br />
-            Professionals
-          </p>
-        </span>
+    <footer className={`full-width flex flex-col center gap-md ${styles.footer}`}>
+       <div className={`flex center gap ${styles.info}`}>
+        <Image className='flex center circle' src={FooterLogo} alt="footer_logo" />
+        <p>Live Chat with professionals</p>
+       </div>
+       <div className={`flex flex-col center ${styles.newsLetter}`}>
+       <h2>STAY INFORMED</h2>
+       <p>stay up to date with our initiatives, new resources and project developments</p>
+      <NewsLetter/>
       </div>
-
-      <div className={`text-center`}>
-        <h2>STAY INFORMED</h2>
-        <p>
-          Stay up to date with our initiatives, new resources and project
-          developments
-        </p>
-      </div>
+      <ul className='flex gap full-width center'>
+        <li>Courses</li>
+        <li>Privacy Policy</li>
+        <li>Terms & Conditions</li>
+      </ul>
     </footer>
-  );
+  )
 }
 
-export default Footer;
+export default Footer

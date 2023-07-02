@@ -74,6 +74,25 @@
   gap: 1.5rem;
 }
 
+.newsLetter {
+  flex-direction: column;
+}
+
+.email {
+   border-radius: 50%;
+   padding: 1rem 5rem !important;
+   border: 1px solid var(--tertiary-color-1) !important;
+   color: var(--tertiary-color-1) !important;
+   background-color: transparent;
+}
+
+.newsLetter > button {
+  background-color: var(--primary-color-2);
+  border: none;
+  padding: 1rem 3rem;
+  color: var(--secondary-color);
+}
+
 @media (min-width: 768px) {
   .authImg {
     display: block;
@@ -81,5 +100,9 @@
 
   .form {
     padding: 2rem 5rem;
+  }
+
+  .newsLetter {
+    flex-direction: row;
   }
 }

@@ -21,6 +21,7 @@
   --primary-color-2-disabled: hsla(181, 47%, 51%, 50%);
   --primary-color-3: rgba(0, 203, 184, 0.03);
   --primary-color-4: rgba(73, 187, 189, 0.6);
+  --primary-color-5:  hwb(238 15% 75%);
 
   --secondary-color: #fff;
   --secondary-color-1: #979797;
@@ -38,6 +39,7 @@
   --tertiary-color: #2f327d;
   --tertiary-color-1: #626381;
   --tertiary-color-2: #83839a;
+   --tertiary-color-3: #83839a2c;
   --tertiary-color-dark: #000000;
   --tertiary-color-dark-1: rgba(0, 0, 0, 0.87);
   --tertiary-color--dark-3: rgba(0, 0, 0, 0.1);

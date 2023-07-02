@@ -10,7 +10,7 @@ import { AuthContext } from '@store/authContext';
 import styles from './auth.module.css';
 
 function SignupForm() {
-  const { user, signup } = useContext(AuthContext);
+  const { signup } = useContext(AuthContext);
 
   return (
     <Formik
