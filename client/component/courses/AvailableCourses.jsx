@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { GrStar } from 'react-icons/gr';
 
 import { availableModule } from '@/utils/courses';
@@ -33,7 +34,7 @@ function AvailableCourses() {
             <div className={`flex align-y ${styles.duration}`}>
               <p>Duration: {module.duration}</p>
 
-              <span className='flex align-y'>
+              <span className="flex align-y">
                 Rating:
                 <span>
                   <GrStar />
@@ -44,7 +45,9 @@ function AvailableCourses() {
                 </span>
               </span>
             </div>
-            <button>VIEW MODULE DETAILS</button>
+            <Link href={`/courses/${module.id}`}>
+              VIEW MODULE DETAILS
+            </Link>
           </Card>
         ))}
       </div>

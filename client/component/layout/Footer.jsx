@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 
 import FooterLogo from '../../public/assets/images/footerIcon.svg';
 import styles from './footer.module.css';
-import NewsLetter from '../auth/newsLetter';
+import NewsLetter from '../auth/NewsLetter';
 
 function Footer() {
   const path = usePathname();
