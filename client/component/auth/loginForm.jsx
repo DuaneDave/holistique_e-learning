@@ -13,18 +13,19 @@ import styles from './auth.module.css';
 
 function LoginForm() {
   const [rememberMe, setRememberMe] = useState(false);
-  const [formData, setFormData] = useState({
+  const { login } = useContext(AuthContext);
+
+  const initialFormValues = {
     email: '',
     password: '',
-  });
-  const { user, login } = useContext(AuthContext);
-  const router = useRouter();
+  };
 
   useEffect(() => {
     const auth = JSON.parse(localStorage.getItem('auth'));
 
     if (auth) {
-      setFormData(auth);
+      initialFormValues.email = auth.email;
+      initialFormValues.password = auth.password;
 
       setRememberMe(true);
     }
@@ -32,7 +33,7 @@ function LoginForm() {
 
   return (
     <Formik
-      initialValues={formData}
+      initialValues={initialFormValues}
       validationSchema={Yup.object({
         email: Yup.string().email('Invalid email address').required('Required'),
         password: Yup.string()
@@ -62,14 +63,12 @@ function LoginForm() {
               name="email"
               type="email"
               placeholder="Enter Your Email Address"
-              // value={formData.email}
             />
             <Input
               label="password"
               name="password"
               type="password"
               placeholder="Enter Your Password"
-              // value={formData.password}
             />
           </div>
 
