@@ -90,7 +90,7 @@
   box-shadow: 0px 18px 30px 0px rgba(47, 50, 125, 0.25);
 }
 
-.module button {
+.module a {
   align-self: flex-end;
   margin-top: 1.5rem;
   color: var(--accent-color-2);
@@ -116,14 +116,14 @@
 }
 
 .faqSection {
-  background: #EBF5FF;
+  background: #ebf5ff;
   border-radius: var(--radius-1);
   padding: 5rem 3em;
   margin-block: 4rem;
 }
 
 .faqSection p {
-  color: rgba(0, 0, 0, 0.90);
+  color: rgba(0, 0, 0, 0.9);
   padding-block: 1.2rem 2rem;
 }
 
