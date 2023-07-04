@@ -14,34 +14,13 @@ import arrowDown from '../../public/assets/icons/chevron down.png';
 
 import styles from './header.module.css';
 
-const navLinks = [
-  {
-    name: 'Home',
-    path: '/',
-  },
-  {
-    name: 'Project Background',
-    path: '/project-background',
-  },
-  {
-    name: 'Resource Centre',
-    path: '/resources',
-  },
-  {
-    name: 'Course',
-    path: '/courses',
-  },
-  {
-    name: 'Community',
-    path: '/community',
-  },
-];
-
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [show, setShow] = useState(false);
 
   const { user } = useContext(AuthContext);
+
+  console.log(user)
 
   const path = usePathname();
 
@@ -54,7 +33,7 @@ function Header() {
       className={`full-width ${styles.navigation} ${
         path === '/project-background' ||
         path === '/resources' ||
-        path === '/courses' ||
+        path.includes('/courses') ||
         path === '/community'
           ? styles.navBg
           : ''
@@ -67,16 +46,45 @@ function Header() {
 
         <div className={`flex align-y ${styles.navigationInfo}`}>
           <ul className={`flex gap ${isOpen ? styles.toggleNav : ''}`}>
-            {navLinks.map((link, index) => (
-              <li key={index}>
-                <Link
-                  href={link.path}
-                  className={`${path === link.path ? styles.active : ''}`}
-                >
-                  {link.name}
-                </Link>
-              </li>
-            ))}
+            <li>
+              <Link href="/" className={`${path === '/' ? styles.active : ''}`}>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/project-background"
+                className={`${
+                  path === '/project-background' ? styles.active : ''
+                }`}
+              >
+                Project Background
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/resources"
+                className={`${path === '/resources' ? styles.active : ''}`}
+              >
+                Resource Center
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/courses"
+                className={`${path.includes('/courses') ? styles.active : ''}`}
+              >
+                Courses
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/community"
+                className={`${path === '/community' ? styles.active : ''}`}
+              >
+                Community
+              </Link>
+            </li>
           </ul>
 
           {user && (
