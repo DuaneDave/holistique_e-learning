@@ -57,6 +57,15 @@ export function AuthProvider({ children }) {
 
       if (rememberMe) {
         localStorage.setItem('auth', JSON.stringify(data));
+      } else {
+        if (JSON.parse(localStorage.getItem('auth'))) {
+          localStorage.removeItem('auth');
+        }
+
+        setUser(data);
+        callback(false);
+        router.push('/');
+        return;
       }
 
       localStorage.setItem('user', JSON.stringify(res));

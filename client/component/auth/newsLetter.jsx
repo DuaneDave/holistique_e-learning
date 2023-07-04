@@ -8,8 +8,6 @@ import Input from '../inputs/inputs';
 import styles from './auth.module.css';
 
 function NewsLetter() {
-  const [formData, setFormData] = useState({});
-
   const initialFormValues = {
     email: '',
   };
@@ -45,7 +43,6 @@ function NewsLetter() {
             type="email"
             name="email"
             placeholder="Your Email"
-            formData={formData.email}
             className={`rounded ${styles.email}`}
           />
           <button className=" rounded border-grey" type="submit">
