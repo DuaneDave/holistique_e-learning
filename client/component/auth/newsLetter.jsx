@@ -15,10 +15,7 @@ function NewsLetter() {
   useEffect(() => {
     const auth = JSON.parse(localStorage.getItem('auth'));
 
-    if (auth) {
-      setFormData(auth);
-      initialFormValues.email = auth.email;
-    }
+    if (auth) initialFormValues.email = auth.email;
   }, []);
 
   return (
