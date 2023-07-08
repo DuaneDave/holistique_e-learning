@@ -26,7 +26,7 @@ function CtaSection() {
             for people who inject drugs.
           </p>
 
-          <span className='flex'>
+          <span className="flex flex-fluid">
             <p>TAKE THE COURSE FOR FREE</p>
             <Link href="/">Learn more</Link>
           </span>

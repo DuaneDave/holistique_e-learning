@@ -23,13 +23,13 @@
 .controls h1 {
   font-size: clamp(1rem, 2vw, 1.8rem);
   color: rgba(0, 0, 0, 0.9);
-  font-weight: var(--semi-bold);
+  font-weight: var(--medium);
   margin-block: 1.5rem 0.6rem;
 }
 
 .controls p {
   color: rgba(0, 0, 0, 0.8);
-  font-weight: var(--semi-bold);
+  font-weight: var(--medium);
 }
 
 .controls p span {
@@ -45,8 +45,9 @@
   justify-content: space-between;
   font-size: clamp(0.9rem, 2vw, 1.2rem);
   margin-bottom: 1.5rem;
-  font-weight: var(--semi-bold) !important;
+  font-weight: var(--medium) !important;
   color: rgba(0, 0, 0, 0.9);
+  cursor: pointer;
 }
 
 .comments,
@@ -55,7 +56,9 @@
   height: 500px;
 }
 
-/* style scroll bar */
+.active {
+  color: #33efa0;
+}
 
 .comments::-webkit-scrollbar,
 .transcript::-webkit-scrollbar {
@@ -87,7 +90,7 @@
 .commentContainer h2,
 .comment h2 {
   color: var(--tertiary-color-dark);
-  font-weight: var(--semi-bold);
+  font-weight: var(--medium);
   margin-block: 2rem 1rem;
   font-size: clamp(1.5rem, 2vw, 2rem);
 }
