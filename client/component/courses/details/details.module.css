@@ -1,5 +1,6 @@
-.detailsContainer {
-  height: 70dvh;
+.detailsContainer > div {
+  height: 100% !important;
+  width: 100% !important;
 }
 
 .controls {
@@ -156,6 +157,14 @@
 }
 
 @media (min-width: 768px) {
+  .detailsContainer {
+    height: 70dvh;
+  }
+
+  .detailsContainer video {
+    object-fit: cover;
+  }
+
   .spacing {
     padding: 2rem 3rem;
   }
