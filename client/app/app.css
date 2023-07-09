@@ -114,24 +114,30 @@
   background: var(--bg-color);
 }
 
-.headroom > a img {
-  width: 50px;
+.rh5v-DefaultPlayer_component {
+  font-size: 1rem !important;
 }
 
-.headroom--unfixed {
-  position: relative;
-  transform: translateY(0);
+.rh5v-DefaultPlayer_component button {
+  font-size: 1rem !important;
 }
-.headroom--scrolled {
-  transition: transform 200ms ease-in-out;
+
+.rh5v-Fullscreen_button svg,
+.rh5v-PlayPause_button svg,
+.rh5v-Volume_button svg{
+  height: 35px !important;
+  width: 35px !important;
 }
-.headroom--unpinned {
-  position: fixed;
-  transform: translateY(-100%);
+
+.rh5v-Overlay_inner {
+  border-radius: 50% !important;
+  background: var(--secondary-color) !important;
+  height: 80px !important;
+  width: 80px !important;
 }
-.headroom--pinned {
-  position: fixed;
-  transform: translateY(0%);
+
+.rh5v-Overlay_inner svg {
+  fill: var(--accent-color-3) !important;
 }
 
 .hero {

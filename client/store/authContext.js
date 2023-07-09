@@ -12,10 +12,7 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('user'));
 
-    if (user) {
-      setUser(user);
-      router.push('/');
-    }
+    if (user) setUser(user);
   }, []);
 
   const signup = async (payload, callback) => {

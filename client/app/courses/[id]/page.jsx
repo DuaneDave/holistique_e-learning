@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import { useState } from 'react';
 
 import { availableModule } from '@/utils/courses';
 import HeroSection from '@/component/courses/details/HeroSection';
@@ -8,11 +10,12 @@ import Comments from '@/component/courses/details/Comments';
 
 function page({ params }) {
   const module = availableModule.find((module) => module.id === +params.id);
+  const [activeVideo, setActiveVideo] = useState(module.lessons[0].id);
 
   return (
     <>
-      <HeroSection module={module} />
-      <ModuleDetails module={module} />
+      <HeroSection module={module} activeVideo={activeVideo} />
+      <ModuleDetails module={module} setActiveVideo={setActiveVideo} activeVideo={activeVideo} />
       <Comment module={module} />
       <Comments module={module} />
     </>

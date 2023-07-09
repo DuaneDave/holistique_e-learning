@@ -45,49 +45,59 @@ const coursesProgress = [
 
 export const availableModule = [
   {
-    id: 1,
-    title: 'Stigma and discrimination in healthcare',
+    id: 4,
+    title: 'Stigma Reduction',
     module_count: 'Nine lessons contained in this module',
-    duration: '1hr 45mins',
-    module_image: course4,
-    video:
-      'https://vod-progressive.akamaized.net/exp=1688353380~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F4848%2F18%2F474244076%2F2114654487.mp4~hmac=0c0b12a6547c707c4d7c0da24d97f51ed3dd19df464c676c48fc0ecd737a431c/vimeo-prod-skyfire-std-us/01/4848/18/474244076/2114654487.mp4',
+    duration: '1hr 15mins',
+    module_image: course2,
     lessons: [
       {
         id: 1,
         title: 'Lesson one',
         duration: '5mins',
         course: 'Outline stigma and root course',
+        video:
+          'https://player.vimeo.com/external/511908120.sd.mp4?s=ad962a4cc6f8454a6870a18f3cce6a5a83097677&profile_id=164&oauth2_token_id=57447761',
       },
       {
         id: 2,
         title: 'Lesson two',
         duration: '10mins',
         course: 'Outline stigma and root course',
+        video:
+          'https://player.vimeo.com/external/499019255.sd.mp4?s=277b278c5fb04723d80aeecf7fb11fe4f9ab346b&profile_id=164&oauth2_token_id=57447761',
       },
       {
         id: 3,
         title: 'Lesson three',
         duration: '10mins',
         course: 'Outline stigma and root course',
+        video:
+          'https://player.vimeo.com/external/548912494.sd.mp4?s=0ac0580abfe3690fad492c19dc2e6455e0eadf71&profile_id=164&oauth2_token_id=57447761',
       },
       {
         id: 4,
         title: 'Lesson four',
         duration: '10mins',
         course: 'Outline stigma and root course',
+        video:
+          'https://player.vimeo.com/external/511908120.sd.mp4?s=ad962a4cc6f8454a6870a18f3cce6a5a83097677&profile_id=164&oauth2_token_id=57447761',
       },
       {
         id: 5,
         title: 'Lesson five',
         duration: '10mins',
         course: 'Outline stigma and root course',
+        video:
+          'https://player.vimeo.com/external/511907698.sd.mp4?s=84f046df3e5c876ee3c2c59abc3985fa24427124&profile_id=164&oauth2_token_id=57447761',
       },
       {
         id: 6,
         title: 'Lesson six',
         duration: '10mins',
         course: 'Outline stigma and root course',
+        video:
+          'https://player.vimeo.com/external/425601257.sd.mp4?s=2eca8cf057bd0000c3484fdb382b56a0a0b65d83&profile_id=164&oauth2_token_id=57447761',
       },
     ],
     assessment: {
@@ -229,44 +239,54 @@ export const availableModule = [
     module_count: 'Six lessons contained in this module',
     duration: '1hr 15mins',
     module_image: course3,
-    video:
-      'https://vod-progressive.akamaized.net/exp=1688353380~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F4848%2F18%2F474244076%2F2114654487.mp4~hmac=0c0b12a6547c707c4d7c0da24d97f51ed3dd19df464c676c48fc0ecd737a431c/vimeo-prod-skyfire-std-us/01/4848/18/474244076/2114654487.mp4',
     lessons: [
       {
         id: 1,
         title: 'Lesson one',
         duration: '5mins',
         course: 'Outline stigma and root course',
+        video:
+          'https://player.vimeo.com/external/511908120.sd.mp4?s=ad962a4cc6f8454a6870a18f3cce6a5a83097677&profile_id=164&oauth2_token_id=57447761',
       },
       {
         id: 2,
         title: 'Lesson two',
         duration: '10mins',
         course: 'Outline stigma and root course',
+        video:
+          'https://player.vimeo.com/external/499019255.sd.mp4?s=277b278c5fb04723d80aeecf7fb11fe4f9ab346b&profile_id=164&oauth2_token_id=57447761',
       },
       {
         id: 3,
         title: 'Lesson three',
         duration: '10mins',
         course: 'Outline stigma and root course',
+        video:
+          'https://player.vimeo.com/external/548912494.sd.mp4?s=0ac0580abfe3690fad492c19dc2e6455e0eadf71&profile_id=164&oauth2_token_id=57447761',
       },
       {
         id: 4,
         title: 'Lesson four',
         duration: '10mins',
         course: 'Outline stigma and root course',
+        video:
+          'https://player.vimeo.com/external/511908120.sd.mp4?s=ad962a4cc6f8454a6870a18f3cce6a5a83097677&profile_id=164&oauth2_token_id=57447761',
       },
       {
         id: 5,
         title: 'Lesson five',
         duration: '10mins',
         course: 'Outline stigma and root course',
+        video:
+          'https://player.vimeo.com/external/511907698.sd.mp4?s=84f046df3e5c876ee3c2c59abc3985fa24427124&profile_id=164&oauth2_token_id=57447761',
       },
       {
         id: 6,
         title: 'Lesson six',
         duration: '10mins',
         course: 'Outline stigma and root course',
+        video:
+          'https://player.vimeo.com/external/425601257.sd.mp4?s=2eca8cf057bd0000c3484fdb382b56a0a0b65d83&profile_id=164&oauth2_token_id=57447761',
       },
     ],
     assessment: {
@@ -408,44 +428,54 @@ export const availableModule = [
     module_count: 'Nine lessons contained in this module',
     duration: '1hr 45mins',
     module_image: course1,
-    video:
-      'https://vod-progressive.akamaized.net/exp=1688353380~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F4848%2F18%2F474244076%2F2114654487.mp4~hmac=0c0b12a6547c707c4d7c0da24d97f51ed3dd19df464c676c48fc0ecd737a431c/vimeo-prod-skyfire-std-us/01/4848/18/474244076/2114654487.mp4',
     lessons: [
       {
         id: 1,
         title: 'Lesson one',
         duration: '5mins',
         course: 'Outline stigma and root course',
+        video:
+          'https://player.vimeo.com/external/511908120.sd.mp4?s=ad962a4cc6f8454a6870a18f3cce6a5a83097677&profile_id=164&oauth2_token_id=57447761',
       },
       {
         id: 2,
         title: 'Lesson two',
         duration: '10mins',
         course: 'Outline stigma and root course',
+        video:
+          'https://player.vimeo.com/external/499019255.sd.mp4?s=277b278c5fb04723d80aeecf7fb11fe4f9ab346b&profile_id=164&oauth2_token_id=57447761',
       },
       {
         id: 3,
         title: 'Lesson three',
         duration: '10mins',
         course: 'Outline stigma and root course',
+        video:
+          'https://player.vimeo.com/external/548912494.sd.mp4?s=0ac0580abfe3690fad492c19dc2e6455e0eadf71&profile_id=164&oauth2_token_id=57447761',
       },
       {
         id: 4,
         title: 'Lesson four',
         duration: '10mins',
         course: 'Outline stigma and root course',
+        video:
+          'https://player.vimeo.com/external/511908120.sd.mp4?s=ad962a4cc6f8454a6870a18f3cce6a5a83097677&profile_id=164&oauth2_token_id=57447761',
       },
       {
         id: 5,
         title: 'Lesson five',
         duration: '10mins',
         course: 'Outline stigma and root course',
+        video:
+          'https://player.vimeo.com/external/511907698.sd.mp4?s=84f046df3e5c876ee3c2c59abc3985fa24427124&profile_id=164&oauth2_token_id=57447761',
       },
       {
         id: 6,
         title: 'Lesson six',
         duration: '10mins',
         course: 'Outline stigma and root course',
+        video:
+          'https://player.vimeo.com/external/425601257.sd.mp4?s=2eca8cf057bd0000c3484fdb382b56a0a0b65d83&profile_id=164&oauth2_token_id=57447761',
       },
     ],
     assessment: {
@@ -582,49 +612,59 @@ export const availableModule = [
     ],
   },
   {
-    id: 4,
-    title: 'Stigma Reduction',
+    id: 1,
+    title: 'Stigma and discrimination in healthcare',
     module_count: 'Nine lessons contained in this module',
-    duration: '1hr 15mins',
-    module_image: course2,
-    video:
-      'https://vod-progressive.akamaized.net/exp=1688353380~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F4848%2F18%2F474244076%2F2114654487.mp4~hmac=0c0b12a6547c707c4d7c0da24d97f51ed3dd19df464c676c48fc0ecd737a431c/vimeo-prod-skyfire-std-us/01/4848/18/474244076/2114654487.mp4',
+    duration: '1hr 45mins',
+    module_image: course4,
     lessons: [
       {
         id: 1,
         title: 'Lesson one',
         duration: '5mins',
         course: 'Outline stigma and root course',
+        video:
+          'https://player.vimeo.com/external/511908120.sd.mp4?s=ad962a4cc6f8454a6870a18f3cce6a5a83097677&profile_id=164&oauth2_token_id=57447761',
       },
       {
         id: 2,
         title: 'Lesson two',
         duration: '10mins',
         course: 'Outline stigma and root course',
+        video:
+          'https://player.vimeo.com/external/499019255.sd.mp4?s=277b278c5fb04723d80aeecf7fb11fe4f9ab346b&profile_id=164&oauth2_token_id=57447761',
       },
       {
         id: 3,
         title: 'Lesson three',
         duration: '10mins',
         course: 'Outline stigma and root course',
+        video:
+          'https://player.vimeo.com/external/548912494.sd.mp4?s=0ac0580abfe3690fad492c19dc2e6455e0eadf71&profile_id=164&oauth2_token_id=57447761',
       },
       {
         id: 4,
         title: 'Lesson four',
         duration: '10mins',
         course: 'Outline stigma and root course',
+        video:
+          'https://player.vimeo.com/external/511908120.sd.mp4?s=ad962a4cc6f8454a6870a18f3cce6a5a83097677&profile_id=164&oauth2_token_id=57447761',
       },
       {
         id: 5,
         title: 'Lesson five',
         duration: '10mins',
         course: 'Outline stigma and root course',
+        video:
+          'https://player.vimeo.com/external/511907698.sd.mp4?s=84f046df3e5c876ee3c2c59abc3985fa24427124&profile_id=164&oauth2_token_id=57447761',
       },
       {
         id: 6,
         title: 'Lesson six',
         duration: '10mins',
         course: 'Outline stigma and root course',
+        video:
+          'https://player.vimeo.com/external/425601257.sd.mp4?s=2eca8cf057bd0000c3484fdb382b56a0a0b65d83&profile_id=164&oauth2_token_id=57447761',
       },
     ],
     assessment: {

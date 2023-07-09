@@ -164,7 +164,6 @@
 
 .ctaContainer > div span {
   margin-top: 4rem;
-  align-self: flex-end;
   font-size: 1rem;
 }
 
@@ -178,6 +177,8 @@
   color: var(--secondary-color);
   padding: 0.2rem 2rem;
   border-radius: 8px !important;
+  align-self: flex-start;
+  margin-top: 1rem;
 }
 
 .quote {
@@ -222,6 +223,10 @@
     padding: 1rem 4rem;
     margin-inline: 2rem;
   }
+
+  .ctaContainer > div span a {
+    margin-top: unset;
+  }
 }
 
 @media (min-width: 968px) {
@@ -232,18 +237,20 @@
   .content {
     grid-template-columns: 1fr 0.5fr;
   }
+
+  .ctaContainer > div span {
+    align-self: flex-end;
+  }
 }
 
 @media ((min-height: 800px)) {
   .heroContainer {
     height: 90dvh;
   }
-  
 }
 
 @media ((min-height: 900px)) {
   .heroContainer {
     height: 60dvh;
   }
-  
 }

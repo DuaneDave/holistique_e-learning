@@ -4,8 +4,9 @@ import { useState } from 'react';
 
 import styles from './details.module.css';
 
-function ModuleDetails({ module }) {
+function ModuleDetails({ module, setActiveVideo, activeVideo }) {
   const [isLessonOpen, setIsLessonOpen] = useState(true);
+
   return (
     <section className={styles.moduleDetails}>
       <div className={`container ${styles.controls}`}>
@@ -30,7 +31,9 @@ function ModuleDetails({ module }) {
         {isLessonOpen && (
           <ul className="container">
             {module.lessons.map((lesson) => (
-              <li key={lesson.id} className={`flex ${styles.lesson}`}>
+              <li key={lesson.id} className={`flex ${styles.lesson} ${activeVideo === lesson.id && styles.active}`}
+              onClick={() => setActiveVideo(lesson.id)}
+              >
                 <p>
                   {lesson.title}: {lesson.course}
                 </p>
