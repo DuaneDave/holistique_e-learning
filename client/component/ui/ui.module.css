@@ -21,7 +21,7 @@
 .portraitCard {
   position: relative;
   border-radius: 0.5rem;
-  padding: 0,5rem 0.3rem;
+  padding: 0, 5rem 0.3rem;
   background: var(--secondary-color-4);
 }
 
@@ -34,4 +34,97 @@
 .portraitCard p {
   font-size: 1rem;
   color: var(--secondary-color-1);
+}
+
+.profilecontainer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(243, 239, 239, 0.425);
+}
+
+.profileheading {
+  align-items: center;
+  gap: 4rem;
+}
+
+.profileheading img:first-child {
+  background-color: var(--primary-color-2);
+  color: white;
+  padding: 0.4rem 0.3rem;
+  border-radius: 0.2rem;
+}
+
+.profilecontainer > div {
+  width: 90%;
+  background-color: white;
+  border-radius: 0.9rem;
+  z-index: 1rem;
+  padding-inline: 3rem;
+}
+
+.modalForm,
+.profilecontainer > div {
+  padding: 0.7rem;
+}
+
+.modalForm > div {
+  text-align: left;
+  width: 100%;
+}
+
+.uploadImages {
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+.uploadImages img:first-child {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.upload {
+  position: absolute;
+  top: 50px;
+  right: 10%;
+  color: white;
+  background-color: var(--primary-color);
+  padding: 0.2rem;
+}
+
+.modalForm > div input {
+  padding: 0.9rem 0.65rem;
+  border-radius: 0.2rem;
+  border: var(--tertiary-color-dark-1) 1px solid;
+}
+
+.modalForm > div input,
+.modalForm > div label {
+  color: var(--tertiary-color-dark-1);
+}
+
+.modalForm > div label {
+  font-size: 0.6rem;
+}
+
+.modalForm > button {
+  border-radius: 0.4rem !important;
+  color: white;
+  padding: 0.8rem 0.9rem;
+  background-color: var(--accent-color-6);
+}
+
+@media (min-width: 768px) {
+  .profilecontainer > div {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .profileheading {
+    gap: 5rem;
+  }
 }

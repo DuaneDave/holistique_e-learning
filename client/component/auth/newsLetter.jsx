@@ -8,6 +8,7 @@ import Input from '../inputs/inputs';
 import styles from './auth.module.css';
 
 function NewsLetter() {
+
   const initialFormValues = {
     email: '',
   };
@@ -16,7 +17,6 @@ function NewsLetter() {
     const auth = JSON.parse(localStorage.getItem('auth'));
 
     if (auth) {
-      setFormData(auth);
       initialFormValues.email = auth.email;
     }
   }, []);
@@ -45,6 +45,7 @@ function NewsLetter() {
             placeholder="Your Email"
             className={`rounded ${styles.email}`}
           />
+          
           <button className=" rounded border-grey" type="submit">
             subscribe
           </button>

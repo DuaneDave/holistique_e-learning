@@ -17,12 +17,22 @@ import styles from './header.module.css';
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [show, setShow] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   const { user } = useContext(AuthContext);
 
   console.log(user)
 
   const path = usePathname();
+
+  const handleModal = () => {
+    setOpenModal(!openModal);
+  }
+
+  const handleClick = () => {
+    setShow(!show);
+  }
+  console.log(show);
 
   if (path === '/login' || path === '/signup' || path === '/faq') {
     return null;
@@ -90,12 +100,12 @@ function Header() {
           {user && (
             <span className={`flex center ${styles.user}`}>
               <Image src={avatar} width={30} height={30} alt="current user" />
-              <button className="flex align-y" onClick={() => setShow(!show)}>
+              <button className="flex align-y" onClick={handleClick}>
                 <p>John Doe</p>
 
                 <Image src={arrowDown} alt="arrow down" />
               </button>
-              {show && <Dropdown />}
+              {show && <Dropdown openModal={openModal}  setOpenModal={setOpenModal} setShow={setShow} />}
             </span>
           )}
 
