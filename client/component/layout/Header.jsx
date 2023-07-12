@@ -105,7 +105,7 @@ function Header() {
 
                 <Image src={arrowDown} alt="arrow down" />
               </button>
-              {show && <Dropdown openModal={openModal}  setOpenModal={setOpenModal} setShow={setShow} />}
+              {show && <Dropdown openmodal={openModal}  setopenmodal={setOpenModal} setshow={setShow} />}
             </span>
           )}
 

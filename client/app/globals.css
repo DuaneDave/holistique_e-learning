@@ -107,3 +107,7 @@ html {
 .no-scroll {
   overflow: hidden;
 }
+
+.text-message {
+  color: var(--primary-color);
+}

@@ -9,7 +9,7 @@ const userRouter = Router();
 userRouter.post('/signup', signup);
 userRouter.post('/login', login);
 userRouter.delete('/logout', logout);
-userRouter.put('/edit-profile', upload.single('file'), editProfile);
+userRouter.put('/edit-profile/:id', upload.single('file'), editProfile);
 userRouter.put('/add-course/:id', addCourse);
 
 

@@ -12,12 +12,12 @@ function Dropdown({ ...props }) {
   const { logout } = useContext(AuthContext);
 
   const handleLogout = () => {
-    props.setShow(false);
+    props.setshow(false);
     logout();
   };
 
   const handleProfileOpen = () => {
-     props.setOpenModal(true);
+     props.setopenmodal(true);
   }
 
   if (!props.openModal) {
@@ -27,7 +27,7 @@ function Dropdown({ ...props }) {
   return (
     <div className={`flex flex-col gap ${styles.dropdown}`} {...props}>
       <p onClick={handleProfileOpen}>My Profile</p>
-      {props.openModal && <ProfileModal setShow={props.setShow} openModal={props.openModal} setOpenModal={props.setOpenModal} />}
+      {props.openmodal ? <ProfileModal setshow={props.setshow} openmodal={props.openmodal} setopenmodal={props.setopenmodal} /> : ''}
       <button onClick={handleLogout}>Logout</button>
     </div>
   );
