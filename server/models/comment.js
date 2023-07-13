@@ -7,7 +7,7 @@ const commentSchema = new Schema(
       trim: true,
       required: true,
     },
-    user: { type: Schema.Types.ObjectId, ref: 'User' },
+    user: [],
     likes: [{ type: Schema.Types.ObjectId, ref: 'User' }],
     dislikes: [{ type: Schema.Types.ObjectId, ref: 'User' }],
   },
