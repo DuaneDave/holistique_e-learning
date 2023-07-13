@@ -9,7 +9,7 @@ import {
 const commentRouter = Router();
 
 commentRouter.post('/create', createComment);
-commentRouter.put('/like', like);
-commentRouter.put('/dislike', dislike);
+commentRouter.put('/:id/like', like);
+commentRouter.delete('/:id/dislike', dislike);
 
 export default commentRouter;
