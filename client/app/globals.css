@@ -104,3 +104,11 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.text-message {
+  color: var(--primary-color);
+}
