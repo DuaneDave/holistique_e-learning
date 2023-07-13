@@ -9,16 +9,21 @@ export const createComment = async (req, res) => {
   const { content, course_id } = req.body;
   const { token } = req.cookies;
 
+  console.log(req.body, token);
+
   try {
     jwt.verify(token, secret, async (error, decoded) => {
       if (error) {
         return res.status(401).json({ message: 'Unauthorized', status: 401 });
       }
 
-      const newComment = await Comment.create({
+      const newComment = new Comment({
         content,
-        user: decoded,
       });
+
+      newComment.user.push(decoded);
+
+      await newComment.save();
 
       await Course.findByIdAndUpdate(
         course_id,

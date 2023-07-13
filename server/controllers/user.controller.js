@@ -62,18 +62,12 @@ export const login = async (req, res) => {
           return res.status(500).json({ message: error.message, status: 500 });
         }
 
-        res
-          .cookie('token', token, {
-            httpOnly: true,
-            sameSite: 'none',
-            secure: true,
-          })
-          .json({
-            id: foundUser._id,
-            username: foundUser.username,
-            email: foundUser.email,
-            message: 'User logged in successfully',
-          });
+        res.cookie('token', token).json({
+          id: foundUser._id,
+          username: foundUser.username,
+          email: foundUser.email,
+          message: 'User logged in successfully',
+        });
       }
     );
   } catch (error) {
@@ -150,6 +144,18 @@ export const addCourse = async (req, res) => {
         status: 200,
       });
     });
+  } catch (error) {
+    res.status(500).json({ message: error.message, status: 500 });
+  }
+};
+
+export const getUser = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const foundUser = await User.findById(id).populate('courses');
+
+    res.status(200).json({ user: foundUser, status: 200 });
   } catch (error) {
     res.status(500).json({ message: error.message, status: 500 });
   }
