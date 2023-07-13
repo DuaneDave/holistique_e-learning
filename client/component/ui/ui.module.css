@@ -55,6 +55,14 @@
   color: var(--secondary-color-4);
   padding: 0.4rem 0.3rem;
   border-radius: 0.2rem;
+  width: 15px;
+  height: 15px;
+}
+
+.profileheading img:last-child{
+  background-color: transparent !important;
+  width: 39px;
+  height: 39px;
 }
 
 .profileheading h2 {
@@ -100,7 +108,16 @@
   right: 30%;
 }
 
-.uploadImages img:first-child {
+.uploadimage {
+  border-radius: 100%;
+  object-fit: contain;
+}
+
+.uploadImages > div > img {
+  border-radius: 100%;
+}
+
+.uploadImages img:nth-child(2) {
   position: relative;
   top: 0;
   left: 0;
