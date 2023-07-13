@@ -4,6 +4,7 @@ import { Poppins } from 'next/font/google';
 import Header from '@/component/layout/Header';
 import Footer from '@/component/layout/Footer';
 import AuthProvider from '@/store/authContext';
+import CourseProvider from '@/store/courseContext';
 import Tawk from './tawk';
 
 const inter = Poppins({
@@ -19,12 +20,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Tawk />
+      <head>
+        <Tawk />
+      </head>
       <body className={inter.className}>
         <AuthProvider>
-          <Header />
-          {children}
-          <Footer />
+          <CourseProvider>
+            <Header />
+            {children}
+            <Footer />
+          </CourseProvider>
         </AuthProvider>
       </body>
     </html>

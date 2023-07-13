@@ -95,6 +95,14 @@
   font-size: clamp(1.5rem, 2vw, 2rem);
 }
 
+.cta h2 {
+  color: var(--tertiary-color);
+}
+
+.cta > div p {
+  color: var(--tertiary-color-dark);
+}
+
 .comments,
 .form textarea {
   border-radius: 10px;
@@ -133,10 +141,19 @@
   margin-bottom: 1.5rem;
 }
 
+.comments li > svg,
 .comments li > img {
   margin-right: 1rem;
   width: 40px;
   height: 40px;
+}
+
+.comments li > svg {
+  color: #ccc;
+}
+
+.comments li > div {
+  justify-content: space-between;
 }
 
 .actions {
