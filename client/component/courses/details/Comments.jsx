@@ -2,9 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import { BiSolidUserCircle } from 'react-icons/bi';
 
-import like from '@public/assets/icons/like.png';
 import socials from '@/utils/socials';
-import dislike from '@public/assets/icons/dislike.png';
+import CourseActions from './CourseActions';
 
 import styles from './details.module.css';
 
@@ -37,25 +36,10 @@ function Comments({ module }) {
                     <div className={`flex flex-col ${styles.commentDetails}`}>
                       <p>{comment.content}</p>
 
-                      <div className={`flex gap-lg ${styles.actions}`}>
-                        <button className="flex align-y">
-                          <Image src={like} alt="like button" />
-                          <span>
-                            {comment.likes.length === 0
-                              ? ''
-                              : comment.likes.length}
-                          </span>
-                        </button>
-
-                        <button className="flex align-y">
-                          <Image src={dislike} alt="dislike button" />
-                          <span>
-                            {comment.dislikes.length === 0
-                              ? ''
-                              : comment.likes.length}
-                          </span>
-                        </button>
-                      </div>
+                      <CourseActions
+                        comment={comment}
+                        className={styles.actions}
+                      />
                     </div>
                   </li>
                 ))}
