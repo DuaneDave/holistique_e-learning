@@ -80,13 +80,14 @@ function ProfileModal({ openmodal, setopenmodal, setshow }) {
               <Image src={arrow} alt="arrow" onClick={handleProfileCLose}/>
               <h2>Edit Profile</h2>
               <button type="submit" className={styles.checkoutprofile}>
-                <Image src={sign} alt="good_sign" />
+                <Image className={styles.goodsign} src={sign} alt="good_sign" />
               </button>
             </div>
 
             <div className={styles.uploadImages}>
               <div>
-             {image.preview ? (<><Image styles={`flex circle ${styles.uploadimage}`} src={image.preview} alt='preview' width={80} height={80} /><button className={styles.uploadbutton} type="button">
+             {image.preview ? (<>
+             <Image styles={`flex circle ${styles.uploadimage}`} src={image.preview} alt='preview' width={80} height={80} /><button className={styles.uploadbutton} type="button">
                   <label htmlFor="upload-button">
                     <Image
                       className={`flex circle ${styles.upload}`}
