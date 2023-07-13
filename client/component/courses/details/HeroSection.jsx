@@ -7,17 +7,20 @@ import styles from './details.module.css';
 import 'react-html5video/dist/styles.css';
 
 function HeroSection({ module, activeVideo }) {
-  console.log(activeVideo);
+  const foundModule = module?.lessons
+
+  if (!foundModule) return null;
 
   return (
     <section className={styles.detailsContainer}>
-      {module.lessons.map(
-        (lesson) =>
-          activeVideo === lesson.id && (
+      {foundModule.map(
+        (lesson, index) =>
+          activeVideo === index && (
             <Video
               className="full-width full-height"
               controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}
               onEnded={() => console.log('onEnded')}
+              key={lesson._id}
             >
               <source
                 src={lesson.video}

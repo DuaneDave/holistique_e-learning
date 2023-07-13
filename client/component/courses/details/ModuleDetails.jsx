@@ -7,6 +7,10 @@ import styles from './details.module.css';
 function ModuleDetails({ module, setActiveVideo, activeVideo }) {
   const [isLessonOpen, setIsLessonOpen] = useState(true);
 
+  const foundModule = module?.lessons;
+
+  if (!foundModule) return null;
+
   return (
     <section className={styles.moduleDetails}>
       <div className={`container ${styles.controls}`}>
@@ -30,9 +34,13 @@ function ModuleDetails({ module, setActiveVideo, activeVideo }) {
       <div className={isLessonOpen ? styles.lessonsBg : styles.spacing}>
         {isLessonOpen && (
           <ul className="container">
-            {module.lessons.map((lesson) => (
-              <li key={lesson.id} className={`flex ${styles.lesson} ${activeVideo === lesson.id && styles.active}`}
-              onClick={() => setActiveVideo(lesson.id)}
+            {foundModule.map((lesson, index) => (
+              <li
+                key={lesson._id}
+                className={`flex ${styles.lesson} ${
+                  activeVideo === lesson.id && styles.active
+                }`}
+                onClick={() => setActiveVideo(index)}
               >
                 <p>
                   {lesson.title}: {lesson.course}
@@ -41,16 +49,27 @@ function ModuleDetails({ module, setActiveVideo, activeVideo }) {
                 <p>{lesson.duration}</p>
               </li>
             ))}
-            <li className={`flex ${styles.lesson}`}>
+            {/* <li className={`flex ${styles.lesson}`}>
               <p>Assessment</p>
               <p>{module.assessment.duration}</p>
-            </li>
+            </li> */}
           </ul>
         )}
 
         {!isLessonOpen && (
-          <div className={`container ${styles.transcript}`}>
-            <p>{module.transcript}</p>
+          <div className={`container flex center ${styles.transcript}`}>
+            {module.transcript ? (
+              <p>{module.transcript}</p>
+            ) : (
+              <p
+                style={{
+                  fontSize: 'clamp(2rem, 4vw, 4rem)',
+                  color: '#ccc',
+                }}
+              >
+                No transcript available
+              </p>
+            )}
           </div>
         )}
       </div>
