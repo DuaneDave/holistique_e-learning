@@ -9,25 +9,24 @@ import Comment from '@/component/courses/details/Comment';
 import Comments from '@/component/courses/details/Comments';
 
 function page({ params }) {
-  const { courses, fetchCourses } = useContext(CourseContext);
+  const { course, fetchCourse } = useContext(CourseContext);
 
   useEffect(() => {
-    fetchCourses();
+    fetchCourse(params.id);
   }, []);
 
-  const module = courses.find((module) => module._id === params.id);
   const [activeVideo, setActiveVideo] = useState(0);
 
   return (
     <>
-      <HeroSection module={module} activeVideo={activeVideo} />
+      <HeroSection module={course} activeVideo={activeVideo} />
       <ModuleDetails
-        module={module}
+        module={course}
         setActiveVideo={setActiveVideo}
         activeVideo={activeVideo}
       />
-      <Comment module={module} />
-      <Comments module={module} />
+      <Comment module={course} />
+      <Comments module={course} />
     </>
   );
 }

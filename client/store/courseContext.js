@@ -5,14 +5,13 @@ import { useState, createContext } from 'react';
 export const CourseContext = createContext();
 
 function CourseProvider({ children }) {
-  const [courses, setCourses] = useState([]);
-  const [course, setCourse] = useState(null);
+  const [course, setCourses] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const fetchCourses = async () => {
+  const fetchCourse = async (id) => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:4000/api/course');
+      const response = await fetch(`http://localhost:4000/api/course/${id}`);
       const data = await response.json();
 
       setCourses(data);
@@ -37,7 +36,6 @@ function CourseProvider({ children }) {
 
       if (res.status === 201) {
         formState(false);
-        window.location.reload();
       }
 
     } catch (error) {
@@ -46,8 +44,8 @@ function CourseProvider({ children }) {
   };
 
   const value = {
-    courses,
-    fetchCourses,
+    course,
+    fetchCourse,
     postComment,
   };
 

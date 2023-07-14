@@ -9,7 +9,7 @@ import 'react-html5video/dist/styles.css';
 function HeroSection({ module, activeVideo }) {
   const foundModule = module?.lessons
 
-  if (!foundModule) return null;
+  if (!foundModule) return <p>Loading....</p>;
 
   return (
     <section className={styles.detailsContainer}>
