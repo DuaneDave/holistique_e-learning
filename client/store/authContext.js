@@ -7,7 +7,7 @@ export const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
-  const [openModal, setOpenModal] = useState(false);
+  const [editProfileVisibility, setEditProfileVisibility] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -98,6 +98,8 @@ export function AuthProvider({ children }) {
     signup,
     login,
     logout,
+    editProfileVisibility,
+    setEditProfileVisibility,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
