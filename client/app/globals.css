@@ -10,6 +10,7 @@
   --heading-2: clamp(1.5rem, 5vw, 2.5rem);
   --heading-3: clamp(1rem, 5vw, 2rem);
   --heading-4: clamp(0.95rem, 5vw, 1.7rem);
+  --heading-5: clamp(0.8rem, 5vw, 1.5rem);
 
   --text-md: clamp(1rem, 5vw, 1.3rem);
   --text-lg: clamp(0.75rem, 5vw, 1.205rem);
