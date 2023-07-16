@@ -15,8 +15,6 @@ function EditProfile() {
     document.body.classList.remove("no-scroll");
   }
 
-  console.log(editProfileVisibility);
-
   return (
     <>
       {editProfileVisibility && (
