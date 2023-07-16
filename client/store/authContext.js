@@ -1,27 +1,70 @@
-'use client';
+"use client";
 
-import { createContext, useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { createContext, useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
+  const [loggedInUser, setLoggedInUser] = useState(null);
   const [editProfileVisibility, setEditProfileVisibility] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem('user'));
+    const user = JSON.parse(localStorage.getItem("user"));
 
     if (user) setUser(user);
+
+    const getLoggedInUser = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:4000/api/user/currentUser`,
+          {
+            method: "GET",
+            credentials: "include",
+          }
+        );
+
+        const res = await response.json();
+        if (res.status === 200) {
+          setLoggedInUser(res);
+        }
+      } catch (err) {
+        console.log(res.err);
+      }
+    };
+
+    getLoggedInUser();
   }, []);
 
+
+  const editProfile = async (payload, callback) => {
+    try {
+      const response = await fetch(
+        `http://localhost:4000/api/user/edit-profile/${loggedInUser.id}`,
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          credentials: 'include',
+          body: JSON.stringify(payload),
+        }
+      );
+
+      if (response.status === 200) {
+        callback({});
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  
   const signup = async (payload, callback) => {
     try {
-      const response = await fetch('http://localhost:4000/api/user/signup', {
-        method: 'POST',
+      const response = await fetch("http://localhost:4000/api/user/signup", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(payload),
       });
@@ -30,7 +73,7 @@ export function AuthProvider({ children }) {
 
       if (data.status !== 400) {
         callback(false);
-        router.push('/login');
+        router.push("/login");
       }
     } catch (error) {
       console.log(error.message);
@@ -39,13 +82,13 @@ export function AuthProvider({ children }) {
 
   const login = async (data, rememberMe, callback) => {
     try {
-      const response = await fetch('http://localhost:4000/api/user/login', {
-        method: 'POST',
+      const response = await fetch("http://localhost:4000/api/user/login", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
-        credentials: 'include',
+        credentials: "include",
       });
 
       const res = await response.json();
@@ -55,23 +98,23 @@ export function AuthProvider({ children }) {
       }
 
       if (rememberMe) {
-        localStorage.setItem('auth', JSON.stringify(data));
+        localStorage.setItem("auth", JSON.stringify(data));
       } else {
-        if (JSON.parse(localStorage.getItem('auth'))) {
-          localStorage.removeItem('auth');
+        if (JSON.parse(localStorage.getItem("auth"))) {
+          localStorage.removeItem("auth");
         }
 
         setUser(data);
         callback(false);
-        router.push('/');
+        router.push("/");
         return;
       }
 
-      localStorage.setItem('user', JSON.stringify(res));
+      localStorage.setItem("user", JSON.stringify(res));
 
       setUser(data);
       callback(false);
-      router.push('/');
+      router.push("/");
     } catch (error) {
       console.log(error.message);
     }
@@ -79,14 +122,14 @@ export function AuthProvider({ children }) {
 
   const logout = async () => {
     try {
-      await fetch('http://localhost:4000/api/user/logout', {
-        method: 'DELETE',
+      await fetch("http://localhost:4000/api/user/logout", {
+        method: "DELETE",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
       });
 
-      localStorage.removeItem('user');
+      localStorage.removeItem("user");
       setUser(null);
     } catch (error) {
       console.log(error.message);
@@ -99,7 +142,9 @@ export function AuthProvider({ children }) {
     login,
     logout,
     editProfileVisibility,
+    loggedInUser,
     setEditProfileVisibility,
+    editProfile,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

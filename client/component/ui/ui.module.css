@@ -43,12 +43,12 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background-color: rgba(243, 239, 239, 0.603);
+  background-color:rgba(151, 151, 151, 0.733);
 }
 
 .profileheading {
   align-items: center;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   justify-content: center;
   gap: 2.2rem;
 }
@@ -145,14 +145,14 @@
 }
 
 .upload {
-  color: white;
-  background-color: var(--primary-color);
+  background-color: var(--primary-color-2);
   padding: 0.2rem;
 }
 
 .modalForm > div input {
-  padding: 0.9rem 0.65rem;
+  padding: 0.8rem 0.65rem;
   border-radius: 0.2rem;
+  font-size: var(--text-md);
   border: var(--tertiary-color-dark-1) 1px solid;
 }
 
@@ -170,10 +170,11 @@
   color: white;
   padding: 1rem 0.1rem !important;
   display: block;
-  margin-top: 1rem;
+  margin-top: 0.9rem;
   width: 100%;
+  font-size: var(--text-lg);
   max-width: 250px;
-  margin-bottom: 1rem;
+  margin-bottom: 0.9rem;
   background-color: var(--accent-color-6) !important;
 }
 
