@@ -103,7 +103,7 @@ function Header() {
 
                   <Image src={arrowDown} alt="arrow down" />
                 </button>
-                {show && <Dropdown setshow={setShow} />}
+                {show && <Dropdown showdropdown="false" setshowdropdown={setShow} />}
               </span>
             )}
 
