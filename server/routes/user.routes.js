@@ -11,7 +11,7 @@ userRouter.post('/login', login);
 userRouter.delete('/logout', logout);
 userRouter.put('/edit-profile/:id', upload.single('file'), editProfile);
 userRouter.put('/add-course/:id', addCourse);
-userRouter.get('/:id', getUser);
+userRouter.get('/currentUser', getUser);
 
 
 export default userRouter;
