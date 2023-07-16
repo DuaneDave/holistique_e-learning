@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 
 import Image from "next/image";
 
@@ -10,70 +10,22 @@ import styles from "./ui.module.css";
 
 import { AuthContext } from "@/store/authContext";
 
-function EditProfileModal({setopenmodal }) {
-  const { logout, user, setEditProfileVisibility } = useContext(AuthContext);
-  const [message, setMessage] = useState("");
-  const [image, setImage] = useState({preview: "", raw: ""});
+function EditProfileModal({ setopenmodal }) {
+  const { logout, editProfile, loggedInUser } = useContext(AuthContext);
+  const [image, setImage] = useState({ preview: "", raw: "" });
+  const [formValues, setFormValues] = useState(loggedInUser);
 
-  const data = {
-    first_name: '',
-    last_name: '',
-    email: '',
-    phone_number: '',
-    password: ''
-  }
-  const [profileData, setProfileData] = useState(data);
-
-  const handleInput = (e) => {
-    const { name, value } = e.target;
-    setProfileData({ ...profileData, [name]: value });
-  };
-
-
-  const handleImageChange = (e) => {
-     if(e.target.files.length){
-     setImage({
-      preview: URL.createObjectURL(e.target.files[0]),
-      raw: e.target.files[0],
-     })
-    }
-  }
-
-  useEffect(()=> {
-     const fetchUser = async() => {
-        try{
-          const response = await fetch(`http://localhost:4000/api/users/${user.id}`).
-          then((res)=> res.data);
-          console.log(response);
-        } catch(err){
-          console.log(err);
-        }
-     }
-     fetchUser();
-  }, []);
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    try {
-      const response = await fetch(
-        `http://localhost:4000/api/users/edit-profile/${user.id}`,
-        {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(profileData),
-        }
-      );
-
-      const res = await response.json();
-      
-
-      if (res.status === 200) {
-        setMessage('file updated');
-      }
-    } catch (err) {
-      setMessage(err);
-      console.log(err);
+    editProfile(formValues, setFormValues);
+  };
+  
+  const handleImageChange = (e) => {
+    if (e.target.files.length) {
+      setImage({
+        preview: URL.createObjectURL(e.target.files[0]),
+        raw: e.target.files[0],
+      });
     }
   };
 
@@ -83,66 +35,90 @@ function EditProfileModal({setopenmodal }) {
         <form onSubmit={handleSubmit} className="full-width flex flex-col">
           <div className="flex flex-col center">
             <div className={`flex ${styles.profileheading}`}>
-              <button className={`flex center ${styles.backarrowbutton}`} aria-label='exit profile edit'>
-              <Image className={`${styles.backarrow}`} src={arrow} alt="exit profile edit" onClick={() => setopenmodal(false)}/>
+              <button
+                className={`flex center ${styles.backarrowbutton}`}
+                aria-label="exit profile edit"
+              >
+                <Image
+                  className={`${styles.backarrow}`}
+                  src={arrow}
+                  alt="exit profile edit"
+                  onClick={() => setopenmodal(false)}
+                />
               </button>
-              <h2 className='flex'>Edit Profile</h2>
+              <h2 className="flex">Edit Profile</h2>
               <button type="submit" className={styles.checkoutprofile}>
-                <Image className={` ${styles.checkoutimage}`} src={sign} alt="submit profile info" />
+                <Image
+                  className={` ${styles.checkoutimage}`}
+                  src={sign}
+                  alt="submit profile info"
+                />
               </button>
             </div>
 
             <div className={styles.uploadImages}>
               <div>
-             {image.preview ? (<>
-             <Image styles={`flex circle ${styles.uploadimage}`} src={image.preview} alt='preview' width={90} height={90} /><button className={styles.uploadbutton} type="button">
-                  <label htmlFor="upload-button">
+                {image.preview ? (
+                  <>
                     <Image
-                      className={`flex circle ${styles.upload}`}
-                      src={upload}
-                      alt="upload-image" />
-                  </label>
-
-                </button></>) :
-              (
-              <>
-            
-              <Image className={styles.avatar} src={avatar} width={100} height={100} alt="avatar" />
-              <button className={styles.uploadbutton} type="button">
-            <label htmlFor="upload-button">
-                  <Image
-                    className={`flex circle ${styles.upload}`}
-                    src={upload}
-               
-                    alt="upload-image" />
-              </label>
-
-                </button>
-
-                </>
-              )
-              }
+                      styles={`flex circle ${styles.uploadimage}`}
+                      src={image.preview}
+                      alt="preview"
+                      width={90}
+                      height={90}
+                    />
+                    <button className={styles.uploadbutton} type="button">
+                      <label htmlFor="upload-button">
+                        <Image
+                          className={`flex circle ${styles.upload}`}
+                          src={upload}
+                          alt="upload-image"
+                        />
+                      </label>
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <Image
+                      className={styles.avatar}
+                      src={avatar}
+                      width={100}
+                      height={100}
+                      alt="avatar"
+                    />
+                    <button className={styles.uploadbutton} type="button">
+                      <label htmlFor="upload-button">
+                        <Image
+                          className={`flex circle ${styles.upload}`}
+                          src={upload}
+                          alt="upload-image"
+                        />
+                      </label>
+                    </button>
+                  </>
+                )}
               </div>
               <div>
                 <input
-                  style={{  display: "none", marginLeft: "-30px" }}
+                  style={{ display: "none", marginLeft: "-30px" }}
                   accept="image*"
+                  name="profile_image"
                   id="upload-button"
                   type="file"
                   onChange={handleImageChange}
-                /> 
+                />
               </div>
             </div>
-
           </div>
           <div className={`flex flex-col gap ${styles.modalForm}`}>
             <div className="flex flex-col">
               <label>First Name</label>
               <input
                 className={styles.input}
-                name="first_name"
-                onChange={handleInput}
+                name="firstName"
+                onChange={(e)=> setFormValues((prev)=> ({...prev, [e.target.name]: e.target.value}))}
                 type="text"
+                value={formValues?.firstName ?? ''}
                 placeholder=""
               />
             </div>
@@ -150,9 +126,10 @@ function EditProfileModal({setopenmodal }) {
               <label>last name</label>
               <input
                 className={styles.input}
-                name="last_name"
-                onChange={handleInput}
+                name="lastName"
+                onChange={(e)=> setFormValues((prev)=> ({...prev, [e.target.name]: e.target.value}))}
                 type="text"
+                value={formValues?.lastName ?? ''}
                 placeholder=""
               />
             </div>
@@ -160,9 +137,10 @@ function EditProfileModal({setopenmodal }) {
               <label>Phone Number</label>
               <input
                 className={styles.input}
-                name="phone_number"
-                onChange={handleInput}
-                type="tel"
+                name="phone"
+                type="text"
+                onChange={(e)=> setFormValues((prev)=> ({...prev, [e.target.name]: e.target.value}))}
+                value={formValues?.phone ?? ''}
                 placeholder=""
               />
             </div>
@@ -171,7 +149,8 @@ function EditProfileModal({setopenmodal }) {
               <input
                 className={styles.input}
                 name="email"
-                onChange={handleInput}
+                onChange={(e)=> setFormValues((prev)=> ( {...prev, [e.target.name]: e.target.value}))}
+                value={formValues?.email ?? ''}
                 type="email"
                 placeholder=""
               />
@@ -181,7 +160,7 @@ function EditProfileModal({setopenmodal }) {
               <input
                 className={styles.input}
                 name="password"
-                onChange={handleInput}
+                onChange={(e)=> setFormValues((prev)=> ({...prev, [e.target.name]: e.target.value}))}
                 type="password"
                 placeholder=""
               />
