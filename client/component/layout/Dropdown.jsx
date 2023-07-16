@@ -11,12 +11,12 @@ function Dropdown({ ...props }) {
   const { logout, setEditProfileVisibility } = useContext(AuthContext);
 
   const handleLogout = () => {
-    props.setshow(false);
+    props.setshowdropdown(!props.showdropdown);
     logout();
   };
 
   const handleProfileClick = () => {
-    props.setshow(false);
+    props.setshowdropdown(!props.showdropdown);
     setEditProfileVisibility(true);
   };
 
