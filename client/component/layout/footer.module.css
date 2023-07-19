@@ -1,6 +1,7 @@
 .footer {
   background-color: var(--primary-color-5);
   padding: 1rem;
+  padding-top: 3rem;
 }
 
 .footer > div > img {
@@ -15,7 +16,7 @@
   max-width: 15ch;
   font-size: var(--text-md);
   position: relative;
-  padding: 1rem;
+  padding-left: 1rem;
 }
 
 .info > p::before{
@@ -27,6 +28,10 @@
   width: 10px;
   height: 70px;
   position: absolute;
+}
+
+.newsLetter {
+  padding-block: 1rem;
 }
 
 .newsLetter > p {
@@ -45,7 +50,7 @@
 }
 
 .footer > ul > li {
-  font-size: 1rem;
+  font-size: 0.6rem;
   position: relative;
   padding-left: 0.6rem;
 }
@@ -78,6 +83,10 @@
 }
 .newsLetter > p{
   max-width: 70ch;
+}
+
+.footer > ul > li {
+  font-size: 1rem;
 }
 
 }
