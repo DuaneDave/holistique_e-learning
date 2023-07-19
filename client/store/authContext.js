@@ -38,6 +38,19 @@ export function AuthProvider({ children }) {
     getLoggedInUser();
   }, []);
 
+  const subscribe = async (payload) => {
+  try{
+    const response = await fetch('http://localhost:4000/api/newsletter/subscribe', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      credentials: 'include',
+      body: JSON.stringify(payload),
+    })
+    console.log(response);
+  } catch(err) {
+      console.log(err);
+  }
+  }
 
   const editProfile = async (payload, callback) => {
     try {
@@ -50,6 +63,7 @@ export function AuthProvider({ children }) {
           body: JSON.stringify(payload),
         }
       );
+      console.log(response);
 
       if (response.status === 200) {
         callback({});
@@ -143,6 +157,7 @@ export function AuthProvider({ children }) {
     logout,
     editProfileVisibility,
     loggedInUser,
+    subscribe,
     setEditProfileVisibility,
     editProfile,
   };
