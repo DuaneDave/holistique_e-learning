@@ -70,6 +70,11 @@
   color: var(--secondary-color);
 }
 
+.formik {
+  justify-content: space-around;
+  align-items: center;
+}
+
 .inputWrapper {
   gap: 1.5rem;
 }
@@ -79,13 +84,14 @@
 }
 
 .email {
-   border-radius: 50%;
-   padding-block: 0.6rem !important;
-   border: 1px solid var(--tertiary-color-1) !important;
-   color: var(--tertiary-color-1) !important;
-   background-color: transparent;
-   font-family: inherit;
-   font-size: 0.9rem;
+  border-radius: 50%;
+  padding-block: 0.6rem !important;
+  border: 1px solid var(--tertiary-color-1) !important;
+  color: var(--tertiary-color-1) !important;
+  background-color: transparent;
+  font-family: inherit;
+  width: 90vw;
+  font-size: 0.9rem;
 }
 
 .email > label {
@@ -101,6 +107,13 @@
   font-size: var(--text-md);
 }
 
+@media screen and (min-width: 456px) and (max-width: 767px) {
+  .email {
+    width: unset;
+    padding-right: 3rem !important;
+  }
+}
+
 @media (min-width: 768px) {
   .authImg {
     display: block;
@@ -112,9 +125,11 @@
 
   .newsLetter {
     flex-direction: row;
+    width: unset;
   }
 
   .email {
     padding-right: 2rem !important;
- }
+    width: unset;
+  }
 }
