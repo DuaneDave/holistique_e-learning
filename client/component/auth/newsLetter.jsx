@@ -1,33 +1,27 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 
 import Input from '../inputs/inputs';
 import styles from './auth.module.css';
+import {AuthContext} from '@store/authContext';
 
 function NewsLetter() {
+  const {subscribe, loggedInUser} = useContext(AuthContext)
 
-  const initialFormValues = {
-    email: '',
-  };
-
-  useEffect(() => {
-    const auth = JSON.parse(localStorage.getItem('auth'));
-    
-    if (auth) initialFormValues.email = auth.email;
-  }, []);
 
   return (
     <Formik
-      initialValues={initialFormValues}
+      initialValues={email}
       validationSchema={Yup.object({
         email: Yup.string().email('invalid Email Address').required('required'),
       })}
       onSubmit={(values, { setSubmitting }) => {
-        signup(values, setSubmitting);
+        subscribe(values, setSubmitting);
       }}
+      className={`${styles.formik}`}
     >
       {({ handleSubmit }) => (
         <form
