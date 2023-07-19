@@ -11,6 +11,7 @@ import Dropdown from "./Dropdown";
 import logo from "../../public/assets/logo.png";
 import avatar from "../../public/assets/icons/avatar.png";
 import arrowDown from "../../public/assets/icons/chevron down.png";
+import arrowDownBlack from '../../public/assets/icons/arrowdownblack.png'
 
 import styles from "./header.module.css";
 import EditProfile from "../layout/EditProfile";
@@ -100,8 +101,8 @@ function Header() {
                 <Image src={avatar} width={30} height={30} alt="current user" />
                 <button className="flex align-y" onClick={handleClick}>
                   <p>John Doe</p>
-
-                  <Image src={arrowDown} alt="arrow down" />
+    
+                  {path === "/" ?  <Image src={arrowDown} alt="arrow down" /> : <Image src={arrowDownBlack} alt="arrow down black color"/>}
                 </button>
                 {show && <Dropdown showdropdown="false" setshowdropdown={setShow} />}
               </span>
