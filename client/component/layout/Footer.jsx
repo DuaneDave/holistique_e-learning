@@ -7,7 +7,7 @@ import { AuthContext } from '@/store/authContext';
 
 import FooterLogo from '../../public/assets/images/footerIcon.svg';
 import styles from './footer.module.css';
-import NewsLetter from '../auth/NewsLetter';
+import NewsLetter from '../auth/newsLetter';
 
 
 function Footer() {

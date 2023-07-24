@@ -6,15 +6,16 @@ import * as Yup from 'yup';
 
 import Input from '../inputs/inputs';
 import styles from './auth.module.css';
-import {AuthContext} from '@store/authContext';
+import { AuthContext } from '@store/authContext';
 
 function NewsLetter() {
-  const {subscribe, loggedInUser} = useContext(AuthContext)
-
+  const { subscribe } = useContext(AuthContext);
 
   return (
     <Formik
-      initialValues={email}
+      initialValues={{
+        email: '',
+      }}
       validationSchema={Yup.object({
         email: Yup.string().email('invalid Email Address').required('required'),
       })}
@@ -37,7 +38,7 @@ function NewsLetter() {
             placeholder="Your Email"
             className={`rounded ${styles.email}`}
           />
-          
+
           <button className=" rounded border-grey" type="submit">
             subscribe
           </button>
