@@ -1,5 +1,5 @@
-import image1 from '../public/assets/images/usedRes1.png';
-import image2 from '../public/assets/images/usedRes2.png';
+import image1 from '@public/assets/images/usedres1.png';
+import image2 from '@public/assets/images/usedres2.png';
 
 const frequentlyUsedResources = [
   {
