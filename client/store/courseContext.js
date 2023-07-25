@@ -11,7 +11,7 @@ function CourseProvider({ children }) {
   const fetchCourse = async (id) => {
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:4000/api/course/${id}`);
+      const response = await fetch(`https://holistique-e-learning.onrender.com/api/course/${id}`);
       const data = await response.json();
 
       setCourses(data);
@@ -23,7 +23,7 @@ function CourseProvider({ children }) {
 
   const postComment = async (comment, formState) => {
     try {
-      const response = await fetch(`http://localhost:4000/api/comment/create`, {
+      const response = await fetch(`https://holistique-e-learning.onrender.com/api/comment/create`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

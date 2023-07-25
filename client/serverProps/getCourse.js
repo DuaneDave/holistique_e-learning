@@ -1,5 +1,7 @@
 const getCourses = async () => {
-  const response = await fetch('http://localhost:4000/api/course');
+  const response = await fetch(
+    'https://holistique-e-learning.onrender.com/api/course'
+  );
 
   const data = await response.json();
 

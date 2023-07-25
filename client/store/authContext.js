@@ -19,7 +19,7 @@ export function AuthProvider({ children }) {
     const getLoggedInUser = async () => {
       try {
         const response = await fetch(
-          `http://localhost:4000/api/user/currentUser`,
+          `https://holistique-e-learning.onrender.com/api/user/currentUser`,
           {
             method: "GET",
             credentials: "include",
@@ -40,7 +40,7 @@ export function AuthProvider({ children }) {
 
   const subscribe = async (payload) => {
   try{
-    const response = await fetch('http://localhost:4000/api/newsletter/subscribe', {
+    const response = await fetch('https://holistique-e-learning.onrender.com/api/newsletter/subscribe', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       credentials: 'include',
@@ -55,7 +55,7 @@ export function AuthProvider({ children }) {
   const editProfile = async (payload, callback) => {
     try {
       const response = await fetch(
-        `http://localhost:4000/api/user/edit-profile/${loggedInUser.id}`,
+        `https://holistique-e-learning.onrender.com/api/user/edit-profile/${loggedInUser.id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -75,7 +75,7 @@ export function AuthProvider({ children }) {
   
   const signup = async (payload, callback) => {
     try {
-      const response = await fetch("http://localhost:4000/api/user/signup", {
+      const response = await fetch("https://holistique-e-learning.onrender.com/api/user/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -96,7 +96,7 @@ export function AuthProvider({ children }) {
 
   const login = async (data, rememberMe, callback) => {
     try {
-      const response = await fetch("http://localhost:4000/api/user/login", {
+      const response = await fetch("https://holistique-e-learning.onrender.com/api/user/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -136,7 +136,7 @@ export function AuthProvider({ children }) {
 
   const logout = async () => {
     try {
-      await fetch("http://localhost:4000/api/user/logout", {
+      await fetch("https://holistique-e-learning.onrender.com/api/user/logout", {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
