@@ -5,7 +5,7 @@ const allowedOrigins = () => {
   };
 
   if (process.env.NODE_ENV === 'production') {
-    origins = {
+    return {
       origin: 'https://your-app-name.herokuapp.com',
       credentials: true,
     };
