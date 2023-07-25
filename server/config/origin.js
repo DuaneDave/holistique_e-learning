@@ -6,7 +6,7 @@ const allowedOrigins = () => {
 
   if (process.env.NODE_ENV === 'production') {
     return {
-      origin: 'https://your-app-name.herokuapp.com',
+      origin: 'https://holistique-e-learning-git-resourcecenter-duanedave.vercel.app/',
       credentials: true,
     };
   }
