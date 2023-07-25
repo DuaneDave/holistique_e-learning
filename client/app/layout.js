@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <Tawk />
+        {/* <Tawk /> */}
       </head>
       <body className={inter.className}>
         <AuthProvider>
