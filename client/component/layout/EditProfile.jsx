@@ -1,19 +1,21 @@
-"use client";
+'use client';
 
-import { useState, useContext } from "react";
+import { useEffect, useContext } from 'react';
 
-import { AuthContext } from "@/store/authContext";
+import { AuthContext } from '@/store/authContext';
 import EditProfileModal from '../ui/EditProfileModal';
 
 function EditProfile() {
+  const { editProfileVisibility, setEditProfileVisibility } =
+    useContext(AuthContext);
 
-  const {editProfileVisibility, setEditProfileVisibility} = useContext(AuthContext);
-  
-  if (editProfileVisibility) {
-    document.body.classList.add("no-scroll");
-  } else{
-    document.body.classList.remove("no-scroll");
-  }
+  useEffect(() => {
+    if (editProfileVisibility) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+  }, [editProfileVisibility]);
 
   return (
     <>

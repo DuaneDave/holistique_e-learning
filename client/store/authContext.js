@@ -31,7 +31,7 @@ export function AuthProvider({ children }) {
           setLoggedInUser(res);
         }
       } catch (err) {
-        console.log(res.err);
+        console.log(err);
       }
     };
 
