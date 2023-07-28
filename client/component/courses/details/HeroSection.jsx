@@ -7,9 +7,17 @@ import styles from './details.module.css';
 import 'react-html5video/dist/styles.css';
 
 function HeroSection({ module, activeVideo }) {
-  const foundModule = module?.lessons
+  const foundModule = module?.lessons;
 
-  if (!foundModule) return <p>Loading....</p>;
+  if (!foundModule)
+    return (
+      <div class="loader flex center">
+        <div className="lds-ripple">
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    );
 
   return (
     <section className={styles.detailsContainer}>
