@@ -8,6 +8,7 @@ const allowedOrigins = () => {
     return {
       origin: 'https://holistique-e-learning-git-resourcecenter-duanedave.vercel.app/',
       credentials: true,
+      https: true,
     };
   }
 
