@@ -174,4 +174,6 @@ export const getUser = async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: error.message, status: 500 });
   }
+
+
 };

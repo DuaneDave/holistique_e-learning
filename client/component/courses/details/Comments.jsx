@@ -12,7 +12,6 @@ function Comments({ module }) {
 
   if (!foundModule) return null;
 
-  console.log(foundModule);
   return (
     <section>
       <div className={`container ${styles.commentContainer}`}>

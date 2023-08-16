@@ -11,7 +11,7 @@ function HeroSection({ module, activeVideo }) {
 
   if (!foundModule)
     return (
-      <div class="loader flex center">
+      <div className="loader flex center">
         <div className="lds-ripple">
           <div></div>
           <div></div>

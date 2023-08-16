@@ -31,6 +31,7 @@ export const getCourses = async (req, res) => {
   try {
     const courses = await Course.find().populate('comments');
 
+    res.setHeader('Access-Control-Allow-Origin', '*');
     res.status(200).json(courses);
   } catch (error) {
     return res.status(500).json({
@@ -44,6 +45,7 @@ export const getCourse = async (req, res) => {
   try {
     const course = await Course.findById(req.params.id).populate('comments');
 
+    res.setHeader('Access-Control-Allow-Origin', '*');
     res.status(200).json(course);
   } catch (error) {
     return res.status(500).json({
