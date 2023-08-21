@@ -8,11 +8,12 @@ import resource6 from '@public/assets/images/resource6.png';
 const resources = [
   {
     id: 1,
-    title: 'Skin and Soft Tissue Infection',
+    title: 'Wound Care & Medical Triage',
     description:
       'Lorem ipsum dolor sit amet consectetur. Nibh id ut egestas nam. Eget arcu commodo consectetur ultrices aliquam habitant posuere aliquet. Ipsum porttitor pretium pretium laoreet mauris elementum integer volutpat. Scelerisque sit donec metus senectus enim id in. Sed in cras imperdiet non. Id ultricies erat viverra molestie. Quis pellentesque fermentum nullam in tortor nam. Est elit feugiat pulvinar in eu viverra donec. Sed etiam amet egestas felis lobortis turpis dictum. Nisl pellentesque rhoncus sit etiam. Ornare sed metus sit sit. Non non mauris adipiscing massa.',
     image: resource1,
-    link: 'healtcare.org'
+    link: 'Natsad.org'
+    // more: 'https://nastad.org/sites/default/files/2023-04/PDF-Wound-Care-And-Triage.pdf'
   },
   {
     id: 2,

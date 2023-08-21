@@ -1,19 +1,28 @@
 import { get } from 'mongoose';
 import Course from '../models/course.js';
+import fs from 'fs';
 
 export const createCourse = async (req, res) => {
   const { title, total_lessons, duration, lessons, cover, transcript } =
     req.body;
 
+  const { path: coverImage } = req.files['cover'][0];
+  const { path: file } = req.files['file'][0];
+
   try {
-    Course.create({
+    const course = new Course({
       title,
       total_lessons,
       duration,
-      lessons,
-      cover,
+      cover: coverImage,
       transcript,
     });
+
+    const newLesson = { ...JSON.parse(lessons), video: file };
+
+    course.lessons.push(newLesson);
+
+    await course.save();
 
     res.status(201).json({
       message: 'Course created successfully',
@@ -31,7 +40,6 @@ export const getCourses = async (req, res) => {
   try {
     const courses = await Course.find().populate('comments');
 
-    res.setHeader('Access-Control-Allow-Origin', '*');
     res.status(200).json(courses);
   } catch (error) {
     return res.status(500).json({
@@ -45,7 +53,6 @@ export const getCourse = async (req, res) => {
   try {
     const course = await Course.findById(req.params.id).populate('comments');
 
-    res.setHeader('Access-Control-Allow-Origin', '*');
     res.status(200).json(course);
   } catch (error) {
     return res.status(500).json({
