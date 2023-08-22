@@ -28,6 +28,7 @@ export function AuthProvider({ children }) {
 
         const res = await response.json();
         if (res.status === 200) {
+          console.log(res)
           setLoggedInUser(res);
         }
       } catch (err) {
