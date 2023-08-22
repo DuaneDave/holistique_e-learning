@@ -6,7 +6,7 @@ const nextConfig = {
       'images.unsplash.com',
       'unsplash.com',
       'source.unsplash.com',
-      'https://holistique-e-learning.onrender.com/',
+      'https://holistique-e-learning.onrender.com',
       'localhost',
     ],
   },
