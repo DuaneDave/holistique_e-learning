@@ -95,7 +95,7 @@ function Header() {
             {user && (
               <span className={`flex center ${styles.user}`}>
                 {loggedInUser?.profile_image ? (
-                  <Image
+                  <img
                     src={
                       'https://holistique-e-learning.onrender.com/' +
                       loggedInUser.profile_image
