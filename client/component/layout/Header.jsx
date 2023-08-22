@@ -10,7 +10,6 @@ import { AuthContext } from '@/store/authContext';
 import Dropdown from './Dropdown';
 
 import logo from '../../public/assets/logo.png';
-import avatar from '../../public/assets/icons/avatar.png';
 import arrowDown from '../../public/assets/icons/chevron down.png';
 import arrowDownBlack from '../../public/assets/icons/arrowdownblack.png';
 
@@ -20,7 +19,7 @@ import EditProfile from '../layout/EditProfile';
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [show, setShow] = useState(false);
-  const { user } = useContext(AuthContext);
+  const { user, loggedInUser } = useContext(AuthContext);
 
   const path = usePathname();
 
@@ -95,11 +94,11 @@ function Header() {
 
             {user && (
               <span className={`flex center ${styles.user}`}>
-                {user.profile_image ? (
+                {loggedInUser?.profile_image ? (
                   <Image
                     src={
                       'https://holistique-e-learning.onrender.com/' +
-                      user.profile_image
+                      loggedInUser.profile_image
                     }
                     width={30}
                     height={30}

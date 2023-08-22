@@ -101,23 +101,18 @@ export function AuthProvider({ children }) {
 
   const login = async (data, rememberMe, callback) => {
     try {
-      const response = await fetch(
-        'https://holistique-e-learning.onrender.com/api/user/login',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-          credentials: 'include',
-        }
-      );
+      const response = await fetch('https://holistique-e-learning.onrender.com/api/user/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+        credentials: 'include',
+      });
 
       const res = await response.json();
 
-      if (res.status === 400) {
-        throw new Error(res.message);
-      }
+      if (res.status === 400) throw new Error(res.message);
 
       if (rememberMe) {
         localStorage.setItem('auth', JSON.stringify(data));
@@ -125,16 +120,11 @@ export function AuthProvider({ children }) {
         if (JSON.parse(localStorage.getItem('auth'))) {
           localStorage.removeItem('auth');
         }
-
-        setUser(data);
-        callback(false);
-        router.push('/');
-        return;
       }
 
       localStorage.setItem('user', JSON.stringify(res));
 
-      setUser(data);
+      setUser(res);
       callback(false);
       router.push('/');
     } catch (error) {
