@@ -19,7 +19,7 @@ export function AuthProvider({ children }) {
     const getLoggedInUser = async () => {
       try {
         const response = await fetch(
-          `https://holistique-e-learning.onrender.com/api/user/currentUser/${user.id}}`,
+          `https://holistique-e-learning.onrender.com/api/user/currentUser/${user.id}`,
           {
             method: 'GET',
             credentials: 'include',
@@ -28,7 +28,7 @@ export function AuthProvider({ children }) {
 
         const res = await response.json();
         if (res.status === 200) {
-          console.log(res)
+          console.log(res);
           setLoggedInUser(res);
         }
       } catch (err) {
@@ -102,14 +102,17 @@ export function AuthProvider({ children }) {
 
   const login = async (data, rememberMe, callback) => {
     try {
-      const response = await fetch('https://holistique-e-learning.onrender.com/api/user/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-        credentials: 'include',
-      });
+      const response = await fetch(
+        'https://holistique-e-learning.onrender.com/api/user/login',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+          credentials: 'include',
+        }
+      );
 
       const res = await response.json();
 
