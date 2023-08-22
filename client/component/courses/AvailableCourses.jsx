@@ -19,7 +19,7 @@ async function AvailableCourses() {
       <div className={`grid ${styles.modules}`}>
         {courses?.map((course) => (
           <Card key={module.id} className={styles.module}>
-            <Image
+            <img
               src={`https://holistique-e-learning.onrender.com/${course.cover}`}
               alt={module.title}
               title={module.title}
