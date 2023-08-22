@@ -19,7 +19,7 @@ export function AuthProvider({ children }) {
     const getLoggedInUser = async () => {
       try {
         const response = await fetch(
-          `https://holistique-e-learning.onrender.com/api/user/currentUser`,
+          `https://holistique-e-learning.onrender.com/api/user/currentUser/${user.id}``,
           {
             method: 'GET',
             credentials: 'include',

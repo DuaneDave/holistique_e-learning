@@ -144,28 +144,20 @@ export const addCourse = async (req, res) => {
 };
 
 export const getUser = async (req, res) => {
-  const { token } = req.cookies;
-
-  if (!token) {
-    return res.status(401).json({ message: 'Unauthorized', status: 401 });
-  }
+  const { id } = req.params;
 
   try {
-    jwt.verify(token, secret, {}, async (err, decoded) => {
-      if (err) throw err;
+    const foundUser = await User.findById(id);
 
-      const foundUser = await User.findById(decoded.id);
-
-      res.status(200).json({
-        id: foundUser.id,
-        username: foundUser.username,
-        email: foundUser.email,
-        firstName: foundUser?.firstName,
-        lastName: foundUser?.lastName,
-        phone: foundUser?.phone,
-        profile_image: foundUser?.profile_image,
-        status: 200,
-      });
+    res.status(200).json({
+      id: foundUser.id,
+      username: foundUser.username,
+      email: foundUser.email,
+      firstName: foundUser?.firstName,
+      lastName: foundUser?.lastName,
+      phone: foundUser?.phone,
+      profile_image: foundUser?.profile_image,
+      status: 200,
     });
   } catch (error) {
     res.status(500).json({ message: error.message, status: 500 });
