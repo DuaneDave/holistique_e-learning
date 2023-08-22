@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 
@@ -20,7 +20,9 @@ function NewsLetter() {
         email: Yup.string().email('invalid Email Address').required('required'),
       })}
       onSubmit={(values, { setSubmitting }) => {
-        subscribe(values, setSubmitting);
+        subscribe(values);
+
+        setSubmitting(false);
       }}
       className={`${styles.formik}`}
     >

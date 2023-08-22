@@ -58,15 +58,10 @@
   margin: 2rem 0 1.5rem;
 }
 
-.form {
-  padding: 2rem 0;
-}
-
 .form button {
-  padding: 0.8rem 5rem;
+  padding: 0.7rem 5rem;
   margin-left: auto;
   background: var(--primary-color-2);
-  margin-top: 2rem;
   color: var(--secondary-color);
 }
 

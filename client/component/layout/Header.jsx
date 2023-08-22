@@ -53,6 +53,7 @@ function Header() {
               <li>
                 <Link
                   href="/"
+                  onClick={() => setIsOpen(false)}
                   className={`${path === '/' ? styles.active : ''}`}
                 >
                   Home
@@ -60,6 +61,7 @@ function Header() {
               </li>
               <li>
                 <Link
+                  onClick={() => setIsOpen(false)}
                   href="/project-background"
                   className={`${
                     path === '/project-background' ? styles.active : ''
@@ -72,6 +74,7 @@ function Header() {
                 {user && (
                   <Link
                     href="/resources"
+                    onClick={() => setIsOpen(false)}
                     className={`${path === '/resources' ? styles.active : ''}`}
                   >
                     Resource Center
@@ -82,6 +85,7 @@ function Header() {
                 {user && (
                   <Link
                     href="/courses"
+                    onClick={() => setIsOpen(false)}
                     className={`${
                       path.includes('/courses') ? styles.active : ''
                     }`}

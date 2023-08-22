@@ -49,7 +49,7 @@ export function AuthProvider({ children }) {
           body: JSON.stringify(payload),
         }
       );
-      console.log(response);
+ 
     } catch (err) {
       console.log(err);
     }

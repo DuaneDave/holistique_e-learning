@@ -19,7 +19,7 @@
   padding-left: 1rem;
 }
 
-.info > p::before{
+.info > p::before {
   content: '';
   top: 1;
   left: 0;
@@ -73,20 +73,19 @@
   bottom: 0;
 }
 
-.footer > ul > li:last-child{
+.footer > ul > li:last-child {
   border-right: none;
 }
 
-@media (min-width: 768px){
-.footer {
-  padding: 1.5rem;
-}
-.newsLetter > p{
-  max-width: 70ch;
-}
+@media (min-width: 768px) {
+  .footer {
+    padding: 1.5rem;
+  }
+  .newsLetter > p {
+    max-width: 70ch;
+  }
 
-.footer > ul > li {
-  font-size: 1rem;
-}
-
+  .footer > ul > li {
+    font-size: 1rem;
+  }
 }

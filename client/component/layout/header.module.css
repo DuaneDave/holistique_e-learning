@@ -66,6 +66,10 @@
   margin-left: 1rem;
 }
 
+.navBg .hamburger span {
+  background: var(--tertiary-color-1);
+}
+
 .hamburger span {
   display: block;
   width: 25px;

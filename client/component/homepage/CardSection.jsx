@@ -40,7 +40,11 @@ function CardSection() {
               <p>
                 {card.description}
 
-                <button>Learn more</button>
+                <button>
+                  <a href={card.link} target="_blank" rel="noopener noreferrer">
+                    Learn More
+                  </a>
+                </button>
               </p>
             </div>
           </DisplayCard>
