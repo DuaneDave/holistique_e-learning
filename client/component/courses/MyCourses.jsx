@@ -1,12 +1,9 @@
 'use client';
 
-import { useContext } from 'react';
-import { useRouter } from 'next/navigation';
+import React from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
-
-import { AuthContext } from '@/store/authContext';
 
 import right from '@public/assets/icons/chevron_right.png';
 import { Card } from '@/component/ui/Cards';
@@ -18,11 +15,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 function MyCourses() {
-  const { user } = useContext(AuthContext);
-  const router = useRouter();
-
-  if (!user) router.push('/login');
-
   return (
     <section className={styles.coursesContainer}>
       <div className={`container ${styles.courses}`}>
