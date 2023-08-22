@@ -8,12 +8,16 @@ import { AuthContext } from '@/store/authContext';
 import HeroSection from '@/component/resources/HeroSection';
 import CardSection from '@/component/resources/CardSection';
 
-function Resources() {
+function page() {
   const { user } = useContext(AuthContext);
 
   const router = useRouter();
 
-  if (!user) return router.push('/login');
+  if (!user) {
+    router.push('/login');
+
+    return null;
+  }
 
   return (
     <>
@@ -23,4 +27,4 @@ function Resources() {
   );
 }
 
-export default Resources;
+export default page;

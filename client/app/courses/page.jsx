@@ -8,12 +8,16 @@ import MyCourses from '@/component/courses/MyCourses';
 import AvailableCourses from '@/component/courses/AvailableCourses';
 import Faq from '@/component/courses/Faq';
 
-function Courses() {
+function page() {
   const { user } = useContext(AuthContext);
 
   const router = useRouter();
 
-  if (!user) return router.push('/login');
+  if (!user) {
+    router.push('/login');
+
+    return null;
+  }
 
   return (
     <>
@@ -24,4 +28,4 @@ function Courses() {
   );
 }
 
-export default Courses;
+export default page;
