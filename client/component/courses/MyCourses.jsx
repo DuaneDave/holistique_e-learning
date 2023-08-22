@@ -1,12 +1,15 @@
 'use client';
 
-import React from 'react';
+import { useContext } from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 
+import { AuthContext } from '@/store/authContext';
+
 import right from '@public/assets/icons/chevron_right.png';
 import { Card } from '@/component/ui/Cards';
+import { BiSolidUserCircle } from 'react-icons/bi';
 
 import coursesProgress from '@/utils/courses';
 
@@ -15,6 +18,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 function MyCourses() {
+  const { user, loggedInUser } = useContext(AuthContext);
+
   return (
     <section className={styles.coursesContainer}>
       <div className={`container ${styles.courses}`}>
@@ -65,8 +70,15 @@ function MyCourses() {
                     <h3>{course.title}</h3>
 
                     <span className="flex align-y">
-                      <Image src={course.author_image} alt="author" />
-                      {course.author}
+                      {loggedInUser?.profile_image ? (
+                        <img
+                          src={`https://holistique-e-learning.onrender.com/${loggedInUser.profile_image}`}
+                          alt="profile"
+                        />
+                      ) : (
+                        <BiSolidUserCircle />
+                      )}
+                      {user?.username}
                     </span>
 
                     <div className={`flex flex-col ${styles.courseProgress}`}>
