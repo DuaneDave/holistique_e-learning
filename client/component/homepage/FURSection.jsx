@@ -69,9 +69,14 @@ function FURSection() {
                         <GrStar />
                         <GrStar />
                       </span>
-                      <Link href="/how-to-use" className="flex center">
+                      <a
+                        href={fur.link}
+                        className="flex center"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         Explore
-                      </Link>
+                      </a>
                     </span>
                   </div>
 

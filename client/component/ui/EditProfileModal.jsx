@@ -1,27 +1,43 @@
-'use client'
+'use client';
 
-import { useContext, useState } from "react";
+import { useContext, useState } from 'react';
 
-import Image from "next/image";
+import Image from 'next/image';
 
-import arrow from "../../public/assets/icons/arrowleft (2).svg";
-import sign from "../../public/assets/icons/material-symbols_done.png";
-import avatar from "../../public/assets/icons/emptyavatar.png";
-import upload from "../../public/assets/icons/Vector (1).svg";
-import styles from "./ui.module.css";
+import arrow from '../../public/assets/icons/arrowleft (2).svg';
+import sign from '../../public/assets/icons/material-symbols_done.png';
+import avatar from '../../public/assets/icons/emptyavatar.png';
+import upload from '../../public/assets/icons/Vector (1).svg';
+import styles from './ui.module.css';
 
-import { AuthContext } from "@/store/authContext";
+import { AuthContext } from '@/store/authContext';
 
 function EditProfileModal({ setopenmodal }) {
   const { logout, editProfile, loggedInUser } = useContext(AuthContext);
-  const [image, setImage] = useState({ preview: "", raw: "" });
+  const [image, setImage] = useState({ preview: '', raw: '' });
   const [formValues, setFormValues] = useState(loggedInUser);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    editProfile(formValues, setFormValues);
+
+    const formData = new FormData();
+
+    formData.append('firstName', formValues.firstName);
+    formData.append('lastName', formValues.lastName);
+    formData.append('phone', formValues.phone);
+    formData.append('email', formValues.email);
+
+    if (formValues.password) {
+      formData.append('password', formValues.password);
+    }
+
+    if (image.raw) {
+      formData.append('file', image.raw);
+    }
+
+    editProfile(formData, setFormValues);
   };
-  
+
   const handleImageChange = (e) => {
     if (e.target.files.length) {
       setImage({
@@ -34,7 +50,11 @@ function EditProfileModal({ setopenmodal }) {
   return (
     <div className={`flex center flex-col ${styles.profilecontainer}`}>
       <div className="flex flex-col full-width center">
-        <form onSubmit={handleSubmit} className="full-width flex flex-col">
+        <form
+          onSubmit={handleSubmit}
+          className="full-width flex flex-col"
+          encType="multipart/form-data"
+        >
           <div className="flex flex-col center">
             <div className={`flex ${styles.profileheading}`}>
               <button
@@ -102,7 +122,7 @@ function EditProfileModal({ setopenmodal }) {
               </div>
               <div>
                 <input
-                  style={{ display: "none", marginLeft: "-30px" }}
+                  style={{ display: 'none', marginLeft: '-30px' }}
                   accept="image*"
                   name="profile_image"
                   id="upload-button"
@@ -118,7 +138,12 @@ function EditProfileModal({ setopenmodal }) {
               <input
                 className={styles.input}
                 name="firstName"
-                onChange={(e)=> setFormValues((prev)=> ({...prev, [e.target.name]: e.target.value}))}
+                onChange={(e) =>
+                  setFormValues((prev) => ({
+                    ...prev,
+                    [e.target.name]: e.target.value,
+                  }))
+                }
                 type="text"
                 value={formValues?.firstName ?? ''}
                 placeholder=""
@@ -129,7 +154,12 @@ function EditProfileModal({ setopenmodal }) {
               <input
                 className={styles.input}
                 name="lastName"
-                onChange={(e)=> setFormValues((prev)=> ({...prev, [e.target.name]: e.target.value}))}
+                onChange={(e) =>
+                  setFormValues((prev) => ({
+                    ...prev,
+                    [e.target.name]: e.target.value,
+                  }))
+                }
                 type="text"
                 value={formValues?.lastName ?? ''}
                 placeholder=""
@@ -141,7 +171,12 @@ function EditProfileModal({ setopenmodal }) {
                 className={styles.input}
                 name="phone"
                 type="text"
-                onChange={(e)=> setFormValues((prev)=> ({...prev, [e.target.name]: e.target.value}))}
+                onChange={(e) =>
+                  setFormValues((prev) => ({
+                    ...prev,
+                    [e.target.name]: e.target.value,
+                  }))
+                }
                 value={formValues?.phone ?? ''}
                 placeholder=""
               />
@@ -151,7 +186,12 @@ function EditProfileModal({ setopenmodal }) {
               <input
                 className={styles.input}
                 name="email"
-                onChange={(e)=> setFormValues((prev)=> ( {...prev, [e.target.name]: e.target.value}))}
+                onChange={(e) =>
+                  setFormValues((prev) => ({
+                    ...prev,
+                    [e.target.name]: e.target.value,
+                  }))
+                }
                 value={formValues?.email ?? ''}
                 type="email"
                 placeholder=""
@@ -162,7 +202,12 @@ function EditProfileModal({ setopenmodal }) {
               <input
                 className={styles.input}
                 name="password"
-                onChange={(e)=> setFormValues((prev)=> ({...prev, [e.target.name]: e.target.value}))}
+                onChange={(e) =>
+                  setFormValues((prev) => ({
+                    ...prev,
+                    [e.target.name]: e.target.value,
+                  }))
+                }
                 type="password"
                 placeholder=""
               />

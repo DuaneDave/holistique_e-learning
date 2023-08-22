@@ -4,6 +4,7 @@ import path from 'path';
 
 import {
   createCourse,
+  addCourseLesson,
   getCourses,
   updateCourse,
   getCourse,
@@ -25,7 +26,10 @@ const upload = multer({ storage }).fields([
   { name: 'file', maxCount: 1 },
 ]);
 
+const addSingle = multer({ storage }).single('file');
+
 courseRouter.post('/create', upload, createCourse);
+courseRouter.post('/add-lesson/:id', addSingle, addCourseLesson);
 courseRouter.get('/', getCourses);
 courseRouter.put('/:id', updateCourse);
 courseRouter.get('/:id', getCourse);

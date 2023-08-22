@@ -35,7 +35,7 @@ function page() {
 
     console.log(formData);
 
-    fetch('http://localhost:4000/api/course/create', {
+    fetch('https://holistique-e-learning.onrender.com/api/course/create', {
       method: 'POST',
       body: formData,
     })
@@ -106,11 +106,7 @@ function page() {
 
       <div>
         <label>cover</label>
-        <input
-          type="file"
-          name="cover"
-          ref={coverRef}
-        />
+        <input type="file" name="cover" ref={coverRef} />
       </div>
 
       <button type="submit">submit</button>

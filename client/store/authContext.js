@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { createContext, useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { createContext, useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 export const AuthContext = createContext();
 
@@ -12,7 +12,7 @@ export function AuthProvider({ children }) {
   const router = useRouter();
 
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("user"));
+    const user = JSON.parse(localStorage.getItem('user'));
 
     if (user) setUser(user);
 
@@ -21,14 +21,15 @@ export function AuthProvider({ children }) {
         const response = await fetch(
           `https://holistique-e-learning.onrender.com/api/user/currentUser`,
           {
-            method: "GET",
-            credentials: "include",
+            method: 'GET',
+            credentials: 'include',
           }
         );
 
         const res = await response.json();
         if (res.status === 200) {
           setLoggedInUser(res);
+          setUser(res);
         }
       } catch (err) {
         console.log(err);
@@ -39,28 +40,30 @@ export function AuthProvider({ children }) {
   }, []);
 
   const subscribe = async (payload) => {
-  try{
-    const response = await fetch('https://holistique-e-learning.onrender.com/api/newsletter/subscribe', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      credentials: 'include',
-      body: JSON.stringify(payload),
-    })
-    console.log(response);
-  } catch(err) {
+    try {
+      const response = await fetch(
+        'https://holistique-e-learning.onrender.com/api/newsletter/subscribe',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
+          body: JSON.stringify(payload),
+        }
+      );
+      console.log(response);
+    } catch (err) {
       console.log(err);
-  }
-  }
+    }
+  };
 
   const editProfile = async (payload, callback) => {
     try {
       const response = await fetch(
         `https://holistique-e-learning.onrender.com/api/user/edit-profile/${loggedInUser.id}`,
         {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
+          method: 'PUT',
           credentials: 'include',
-          body: JSON.stringify(payload),
+          body: payload,
         }
       );
       console.log(response);
@@ -72,22 +75,25 @@ export function AuthProvider({ children }) {
       console.log(err);
     }
   };
-  
+
   const signup = async (payload, callback) => {
     try {
-      const response = await fetch("https://holistique-e-learning.onrender.com/api/user/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
+      const response = await fetch(
+        'https://holistique-e-learning.onrender.com/api/user/signup',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(payload),
+        }
+      );
 
       const data = await response.json();
 
       if (data.status !== 400) {
         callback(false);
-        router.push("/login");
+        router.push('/login');
       }
     } catch (error) {
       console.log(error.message);
@@ -96,14 +102,17 @@ export function AuthProvider({ children }) {
 
   const login = async (data, rememberMe, callback) => {
     try {
-      const response = await fetch("https://holistique-e-learning.onrender.com/api/user/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-        credentials: "include",
-      });
+      const response = await fetch(
+        'https://holistique-e-learning.onrender.com/api/user/login',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+          credentials: 'include',
+        }
+      );
 
       const res = await response.json();
 
@@ -112,23 +121,23 @@ export function AuthProvider({ children }) {
       }
 
       if (rememberMe) {
-        localStorage.setItem("auth", JSON.stringify(data));
+        localStorage.setItem('auth', JSON.stringify(data));
       } else {
-        if (JSON.parse(localStorage.getItem("auth"))) {
-          localStorage.removeItem("auth");
+        if (JSON.parse(localStorage.getItem('auth'))) {
+          localStorage.removeItem('auth');
         }
 
         setUser(data);
         callback(false);
-        router.push("/");
+        router.push('/');
         return;
       }
 
-      localStorage.setItem("user", JSON.stringify(res));
+      localStorage.setItem('user', JSON.stringify(res));
 
       setUser(data);
       callback(false);
-      router.push("/");
+      router.push('/');
     } catch (error) {
       console.log(error.message);
     }
@@ -136,14 +145,17 @@ export function AuthProvider({ children }) {
 
   const logout = async () => {
     try {
-      await fetch("https://holistique-e-learning.onrender.com/api/user/logout", {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      await fetch(
+        'https://holistique-e-learning.onrender.com/api/user/logout',
+        {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
 
-      localStorage.removeItem("user");
+      localStorage.removeItem('user');
       setUser(null);
     } catch (error) {
       console.log(error.message);

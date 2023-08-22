@@ -36,6 +36,40 @@ export const createCourse = async (req, res) => {
   }
 };
 
+export const addCourseLesson = async (req, res) => {
+  const { id } = req.params;
+  const { lesson, title, video, duration } = req.body;
+
+  const { path: file } = req.file;
+
+  try {
+    await Course.findByIdAndUpdate(
+      id,
+      {
+        $push: {
+          lessons: {
+            lesson,
+            title,
+            video: file,
+            duration,
+          },
+        },
+      },
+      { new: true }
+    );
+
+    res.status(201).json({
+      message: 'Lesson added successfully',
+      status: 201,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      message: error.message,
+      status: 500,
+    });
+  }
+};
+
 export const getCourses = async (req, res) => {
   try {
     const courses = await Course.find().populate('comments');

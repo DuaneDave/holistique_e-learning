@@ -6,7 +6,7 @@ import like from '@public/assets/icons/like.png';
 
 const postLikes = async (commentId) => {
   const res = await fetch(
-    `http://localhost:4000/api/comment/${commentId}/like`,
+    `https://holistique-e-learning.onrender.com/api/comment/${commentId}/like`,
     {
       method: 'PUT',
       headers: {
@@ -25,7 +25,7 @@ const postLikes = async (commentId) => {
 
 const postDislikes = async (commentId) => {
   const res = await fetch(
-    `http://localhost:4000/api/comment/${commentId}/dislike`,
+    `https://holistique-e-learning.onrender.com/api/comment/${commentId}/dislike`,
     {
       method: 'DELETE',
       headers: {
@@ -43,7 +43,7 @@ const postDislikes = async (commentId) => {
 };
 
 function CourseActions({ className, comment }) {
-  console.log(comment)
+  console.log(comment);
   return (
     <div className={`flex gap-lg ${className}`}>
       <button className="flex align-y" onClick={() => postLikes(comment._id)}>
@@ -56,7 +56,9 @@ function CourseActions({ className, comment }) {
         onClick={() => postDislikes(comment._id)}
       >
         <Image src={dislike} alt="dislike button" />
-        <span>{comment.dislikes.length === 0 ? '' : comment.dislikes.length}</span>
+        <span>
+          {comment.dislikes.length === 0 ? '' : comment.dislikes.length}
+        </span>
       </button>
     </div>
   );

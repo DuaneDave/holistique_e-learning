@@ -1,25 +1,26 @@
-"use client";
+'use client';
 
-import { useContext, useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { useContext, useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import { BiSolidUserCircle } from 'react-icons/bi';
 
-import { AuthContext } from "@/store/authContext";
-import Dropdown from "./Dropdown";
+import { AuthContext } from '@/store/authContext';
+import Dropdown from './Dropdown';
 
-import logo from "../../public/assets/logo.png";
-import avatar from "../../public/assets/icons/avatar.png";
-import arrowDown from "../../public/assets/icons/chevron down.png";
-import arrowDownBlack from '../../public/assets/icons/arrowdownblack.png'
+import logo from '../../public/assets/logo.png';
+import avatar from '../../public/assets/icons/avatar.png';
+import arrowDown from '../../public/assets/icons/chevron down.png';
+import arrowDownBlack from '../../public/assets/icons/arrowdownblack.png';
 
-import styles from "./header.module.css";
-import EditProfile from "../layout/EditProfile";
+import styles from './header.module.css';
+import EditProfile from '../layout/EditProfile';
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [show, setShow] = useState(false);
-  const {user} = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   const path = usePathname();
 
@@ -27,7 +28,7 @@ function Header() {
     setShow(!show);
   };
 
-  if (path === "/login" || path === "/signup" || path === "/faq") {
+  if (path === '/login' || path === '/signup' || path === '/faq') {
     return null;
   }
 
@@ -35,12 +36,12 @@ function Header() {
     <>
       <header
         className={`full-width ${styles.navigation} ${
-          path === "/project-background" ||
-          path === "/resources" ||
-          path.includes("/courses") ||
-          path === "/community"
+          path === '/project-background' ||
+          path === '/resources' ||
+          path.includes('/courses') ||
+          path === '/community'
             ? styles.navBg
-            : ""
+            : ''
         }`}
       >
         <nav className={`flex align-y full-width container`}>
@@ -49,11 +50,11 @@ function Header() {
           </Link>
 
           <div className={`flex align-y ${styles.navigationInfo}`}>
-            <ul className={`flex gap ${isOpen ? styles.toggleNav : ""}`}>
+            <ul className={`flex gap ${isOpen ? styles.toggleNav : ''}`}>
               <li>
                 <Link
                   href="/"
-                  className={`${path === "/" ? styles.active : ""}`}
+                  className={`${path === '/' ? styles.active : ''}`}
                 >
                   Home
                 </Link>
@@ -62,56 +63,85 @@ function Header() {
                 <Link
                   href="/project-background"
                   className={`${
-                    path === "/project-background" ? styles.active : ""
+                    path === '/project-background' ? styles.active : ''
                   }`}
                 >
                   Project Background
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/resources"
-                  className={`${path === "/resources" ? styles.active : ""}`}
-                >
-                  Resource Center
-                </Link>
+                {user && (
+                  <Link
+                    href="/resources"
+                    className={`${path === '/resources' ? styles.active : ''}`}
+                  >
+                    Resource Center
+                  </Link>
+                )}
               </li>
               <li>
-                <Link
-                  href="/courses"
-                  className={`${
-                    path.includes("/courses") ? styles.active : ""
-                  }`}
-                >
-                  Courses
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/community"
-                  className={`${path === "/community" ? styles.active : ""}`}
-                >
-                  Community
-                </Link>
+                {user && (
+                  <Link
+                    href="/courses"
+                    className={`${
+                      path.includes('/courses') ? styles.active : ''
+                    }`}
+                  >
+                    Courses
+                  </Link>
+                )}
               </li>
             </ul>
 
             {user && (
               <span className={`flex center ${styles.user}`}>
-                <Image src={avatar} width={30} height={30} alt="current user" />
+                {user.profile_image ? (
+                  <Image
+                    src={
+                      'https://holistique-e-learning.onrender.com/' +
+                      user.profile_image
+                    }
+                    width={30}
+                    height={30}
+                    alt="current user"
+                    style={{
+                      borderRadius: '50%',
+                    }}
+                  />
+                ) : (
+                  <BiSolidUserCircle
+                    className={styles.avatar}
+                    style={{
+                      color: path !== '/' ? '#ccc' : '',
+                    }}
+                  />
+                )}
                 <button className="flex align-y" onClick={handleClick}>
-                  <p>John Doe</p>
-    
-                  {path === "/" ?  <Image src={arrowDown} alt="arrow down" /> : <Image src={arrowDownBlack} alt="arrow down black color"/>}
+                  <p>{user.username}</p>
+
+                  {path === '/' ? (
+                    <Image src={arrowDown} alt="arrow down" />
+                  ) : (
+                    <Image src={arrowDownBlack} alt="arrow down black color" />
+                  )}
                 </button>
-                {show && <Dropdown showdropdown="false" setshowdropdown={setShow} />}
+                {show && (
+                  <Dropdown showdropdown="false" setshowdropdown={setShow} />
+                )}
               </span>
             )}
 
             {!user && (
               <div className={`flex center gap ${styles.auth}`}>
                 <Link href="/login">Login</Link>
-                <Link href="/signup">Sign Up</Link>
+                <Link
+                  href="/signup"
+                  style={{
+                    color: path !== '/' ? 'var(--tertiary-color-dark)' : '',
+                  }}
+                >
+                  Sign Up
+                </Link>
               </div>
             )}
 
@@ -126,7 +156,7 @@ function Header() {
           </div>
         </nav>
       </header>
-        <EditProfile />
+      <EditProfile />
     </>
   );
 }

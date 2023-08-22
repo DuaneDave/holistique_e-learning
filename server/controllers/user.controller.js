@@ -83,18 +83,12 @@ export const editProfile = async (req, res) => {
   const { id } = req.params;
   const { email, firstName, lastName, phone } = req.body;
 
+  let newPath = null;
+
+  if (req.file) newPath = req.file.path;
+
   try {
     const foundUser = await User.findById(id);
-    let newPath = null;
-
-    if (req.file) {
-      const { originalname, path } = req.file;
-      const parts = originalname.split('.');
-      const ext = parts[parts.length - 1];
-      newPath = path + '.' + ext;
-      fs.renameSync(path, newPath);
-    }
-
     const { token } = req.cookies;
 
     jwt.verify(token, secret, {}, async (err, decoded) => {
@@ -160,20 +154,20 @@ export const getUser = async (req, res) => {
     jwt.verify(token, secret, {}, async (err, decoded) => {
       if (err) throw err;
 
+      const foundUser = await User.findById(decoded.id);
+
       res.status(200).json({
-        id: decoded.id,
-        username: decoded.username,
-        email: decoded.email,
-        firstName: decoded?.firstName,
-        lastName: decoded?.lastName,
-        phone: decoded?.phone,
-        profile_image: decoded?.profile_image,
+        id: foundUser.id,
+        username: foundUser.username,
+        email: foundUser.email,
+        firstName: foundUser?.firstName,
+        lastName: foundUser?.lastName,
+        phone: foundUser?.phone,
+        profile_image: foundUser?.profile_image,
         status: 200,
       });
     });
   } catch (error) {
     res.status(500).json({ message: error.message, status: 500 });
   }
-
-
 };

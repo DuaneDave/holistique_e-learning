@@ -31,7 +31,7 @@ function HeroSection({ module, activeVideo }) {
               key={lesson._id}
             >
               <source
-                src={lesson.video}
+                src={`https://holistique-e-learning.onrender.com/${lesson.video}`}
                 type="video/webm"
                 className="full-width full-height"
               />

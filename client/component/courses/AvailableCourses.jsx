@@ -17,17 +17,17 @@ async function AvailableCourses() {
       <h2>Available Modules</h2>
 
       <div className={`grid ${styles.modules}`}>
-        {courses.map((course) => (
+        {courses?.map((course) => (
           <Card key={module.id} className={styles.module}>
             <Image
-              src={course.cover}
+              src={`https://holistique-e-learning.onrender.com/${course.cover}`}
               alt={module.title}
               title={module.title}
               className="full-width full-height"
               width={0}
               height={0}
               sizes="100vw"
-              style={{borderRadius: 'var(--radius-1)'}}
+              style={{ borderRadius: 'var(--radius-1)' }}
             />
 
             <div className={styles.cardContent}>

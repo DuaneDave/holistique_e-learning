@@ -115,6 +115,11 @@
   color: var(--tertiary-color-dark) !important;
 }
 
+.avatar {
+  width: 2rem;
+  height: 2rem;
+}
+
 @media (max-width: 968px) {
   .hamburger {
     display: block;

@@ -4,51 +4,84 @@ import resource3 from '@public/assets/images/resource3.png';
 import resource4 from '@public/assets/images/resource4.png';
 import resource5 from '@public/assets/images/resource5.png';
 import resource6 from '@public/assets/images/resource6.png';
+import resource7 from '@public/assets/images/resource7.png';
+import resource8 from '@public/assets/images/resource8.png';
+import resource9 from '@public/assets/images/resource9.png';
+import resource10 from '@public/assets/images/resource10.png';
 
 const resources = [
   {
     id: 1,
     title: 'Wound Care & Medical Triage',
-    description:
-      'Lorem ipsum dolor sit amet consectetur. Nibh id ut egestas nam. Eget arcu commodo consectetur ultrices aliquam habitant posuere aliquet. Ipsum porttitor pretium pretium laoreet mauris elementum integer volutpat. Scelerisque sit donec metus senectus enim id in. Sed in cras imperdiet non. Id ultricies erat viverra molestie. Quis pellentesque fermentum nullam in tortor nam. Est elit feugiat pulvinar in eu viverra donec. Sed etiam amet egestas felis lobortis turpis dictum. Nisl pellentesque rhoncus sit etiam. Ornare sed metus sit sit. Non non mauris adipiscing massa.',
     image: resource1,
-    link: 'Natsad.org'
+    link: 'PDF-Wound-Care-And-Triage.pdf (nastad.org)',
+    href: 'https://nastad.org/sites/default/files/2023-04/PDF-Wound-Care-And-Triage.pdf',
     // more: 'https://nastad.org/sites/default/files/2023-04/PDF-Wound-Care-And-Triage.pdf'
   },
   {
     id: 2,
-    title: 'Stigma and Discrimination in Healthcare ',
-    description:  'Lorem ipsum dolor sit amet consectetur. Nibh id ut egestas nam. Eget arcu commodo consectetur ultrices aliquam habitant posuere aliquet. Ipsum porttitor pretium pretium laoreet mauris elementum integer volutpat. Scelerisque sit donec metus senectus enim id in. Sed in cras imperdiet non. Id ultricies erat viverra molestie. Quis pellentesque fermentum nullam in tortor nam. Est elit feugiat pulvinar in eu viverra donec. Sed etiam amet egestas felis lobortis turpis dictum. Nisl pellentesque rhoncus sit etiam. Ornare sed metus sit sit. Non non mauris adipiscing massa.',
+    title:
+      'The Centre for Addiction and Mental Health Health Commission of Canada',
     image: resource2,
-    link: 'healtcare.org'
+    link: 'Understanding Stigma | CAMH ',
+    href: 'https://www.camh.ca/en/education/continuing-education-programs-and-courses/continuing-education-directory/understanding-stigma',
   },
   {
     id: 3,
-    title: 'Harm Reduction',
-    description:  'Lorem ipsum dolor sit amet consectetur. Nibh id ut egestas nam. Eget arcu commodo consectetur ultrices aliquam habitant posuere aliquet. Ipsum porttitor pretium pretium laoreet mauris elementum integer volutpat. Scelerisque sit donec metus senectus enim id in. Sed in cras imperdiet non. Id ultricies erat viverra molestie. Quis pellentesque fermentum nullam in tortor nam. Est elit feugiat pulvinar in eu viverra donec. Sed etiam amet egestas felis lobortis turpis dictum. Nisl pellentesque rhoncus sit etiam. Ornare sed metus sit sit. Non non mauris adipiscing massa.',
+    title: 'Harm Reduction Network Learning',
     image: resource3,
-    link: 'healtcare.org'
+    link: 'OHRH Learning',
+    href: 'https://learn.ohrn.org/',
   },
   {
     id: 4,
-    title: 'Stigma Reduction ',
-    description:  'Lorem ipsum dolor sit amet consectetur. Nibh id ut egestas nam. Eget arcu commodo consectetur ultrices aliquam habitant posuere aliquet. Ipsum porttitor pretium pretium laoreet mauris elementum integer volutpat. Scelerisque sit donec metus senectus enim id in. Sed in cras imperdiet non. Id ultricies erat viverra molestie. Quis pellentesque fermentum nullam in tortor nam. Est elit feugiat pulvinar in eu viverra donec. Sed etiam amet egestas felis lobortis turpis dictum. Nisl pellentesque rhoncus sit etiam. Ornare sed metus sit sit. Non non mauris adipiscing massa.',
+    title: 'Canada’s Source for HIV and Hepatitis C Information',
     image: resource4,
-    link: 'healtcare.org'
+    link: 'CTAIE.ca',
+    href: 'https://www.catie.ca/catieca',
   },
   {
     id: 5,
-    title: 'Harms Caused From Drug Injection',
-    description:  'Lorem ipsum dolor sit amet consectetur. Nibh id ut egestas nam. Eget arcu commodo consectetur ultrices aliquam habitant posuere aliquet. Ipsum porttitor pretium pretium laoreet mauris elementum integer volutpat. Scelerisque sit donec metus senectus enim id in. Sed in cras imperdiet non. Id ultricies erat viverra molestie. Quis pellentesque fermentum nullam in tortor nam. Est elit feugiat pulvinar in eu viverra donec. Sed etiam amet egestas felis lobortis turpis dictum. Nisl pellentesque rhoncus sit etiam. Ornare sed metus sit sit. Non non mauris adipiscing massa.',
+    title: 'Community Addictions Peer Support Association',
     image: resource5,
-    link: 'healtcare.org'
+    link: 'Community Addictions Peer Support Association - CAPSA ',
+    href: 'https://capsa.ca/',
   },
   {
     id: 6,
-    title: 'Stigma and Discrimination in Healthcare ',
-    description:  'Lorem ipsum dolor sit amet consectetur. Nibh id ut egestas nam. Eget arcu commodo consectetur ultrices aliquam habitant posuere aliquet. Ipsum porttitor pretium pretium laoreet mauris elementum integer volutpat. Scelerisque sit donec metus senectus enim id in. Sed in cras imperdiet non. Id ultricies erat viverra molestie. Quis pellentesque fermentum nullam in tortor nam. Est elit feugiat pulvinar in eu viverra donec. Sed etiam amet egestas felis lobortis turpis dictum. Nisl pellentesque rhoncus sit etiam. Ornare sed metus sit sit. Non non mauris adipiscing massa.',
+    title:
+      'The British Columbia Centre for Disease Control and Harm Reduction Services',
     image: resource6,
-    link: 'healtcare.org'
+    link: 'Peer2Peer | Toward the Heart',
+    href: 'https://towardtheheart.com/peer2peer-project',
+  },
+  {
+    id: 7,
+    title: 'Canadian Centre on Substance Use and Addiction',
+    image: resource7,
+    link: 'ccsa-ostl',
+    href: 'https://www.ccsa.ca/module/stigma-learning-module-en/#/',
+  },
+  {
+    id: 8,
+    title: 'Brener et al., (2017)',
+    image: resource8,
+    link: 'Nih.gov',
+    href: 'https://towardtheheart.com/reducing-stigma',
+  },
+  {
+    id: 9,
+    title: 'The Centre for Addiction and Mental Health',
+    image: resource9,
+    link: 'camh.ca',
+    href: 'https://kmb.camh.ca/eenet/news/online-course-reducing-stigma-and-promoting-recovery-opioid-use',
+  },
+  {
+    id: 10,
+    title: 'Ontario Harm Reduction Network Learning',
+    image: resource10,
+    link: 'learn.ohrn.org',
+    href: 'https://www.camh.ca/en/education/continuing-education-programs-and-courses/continuing-education-directory/understanding-stigma',
   },
 ];
 

@@ -20,12 +20,13 @@ function CardSection() {
             />
 
             <span>
-              <a href={resource.link}>{resource.link}</a>
+              <a href={resource.href} target="_blank" rel="noopener noreferrer">
+                {resource.link}
+              </a>
             </span>
 
             <div className={`flex flex-col ${styles.cardContent}`}>
               <h3 className="text-center">{resource.title}</h3>
-              <p>{resource.description}</p>
               <button>Learn more</button>
             </div>
           </Card>

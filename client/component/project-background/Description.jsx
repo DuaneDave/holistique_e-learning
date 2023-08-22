@@ -20,26 +20,33 @@ function Description() {
         <h1>Project Holistique</h1>
 
         <p>
-          Lorem ipsum dolor sit amet consectetur. Vitae mauris at scelerisque eu
-          integer. Maecenas turpis enim leo fringilla in massa. Consequat aenean
-          viverra fringilla aliquam duis. Non vel tempor ac nisl duis faucibus
-          sit lacinia. Ac quam scelerisque adipiscing hendrerit vitae sed
-          pellentesque imperdiet aenean. Ultricies facilisis imperdiet tincidunt
-          sollicitudin felis nisl hendrerit. Nisi scelerisque blandit id
-          consectetur lobortis cursus. Ipsum feugiat dui in molestie aliquet. Eu
-          odio tellus integer orci ultricies integer aliquet scelerisque
-          suspendisse. Tincidunt augue dignissim sed neque sit aliquet blandit.
-          Malesuada tempor fermentum nunc nibh metus ullamcorper dui. Nulla
-          nulla nunc scelerisque neque mauris. Sit nibh rhoncus scelerisque ac
-          tellus nisl arcu nibh velit. In proin feugiat id sagittis eget sit
-          interdum. Elementum amet lacus nunc egestas interdum. Ullamcorper non
-          ullamcorper congue consequat mollis est habitasse. Est nunc nam tortor
-          cras. Maecenas enim bibendum in tincidunt tincidunt. Eu ultrices
-          viverra ipsum cras. Facilisis nunc pulvinar ac sed aliquam faucibus.
-          Eu viverra eget egestas id eu eget fringilla. Aenean mattis donec
-          viverra sed laoreet bibendum malesuada ultricies. Pellentesque
-          venenatis eget pharetra scelerisque blandit laoreet lectus. In
-          consequat quis cursus et faucibus tempor turpis.
+          In today’s world, health-related stigma and discrimination continue to
+          be a major challenge to illness prevention and access to healthcare.
+          Certain health conditions such as injection drug use have been known
+          to trigger significant stigmatization. People who inject drugs face
+          stigma in all aspects of their daily lives and are susceptible to skin
+          and soft tissue infections, especially among the homeless population
+          as they often lack access to resources to properly take care of their
+          health. It is well known that even those providers who provide wound
+          care and skin and soft tissue infection services show significant
+          stigma towards this population which negatively impacts PWID access to
+          health services. <br /> <br /> It is critical that healthcare
+          providers are properly equipped to better support the population who
+          inject drugs. Healthcare workers should be trained to provide
+          stigma-free care so that PWID Commented [SA1]: Please change it, what
+          you have is not reflective of the customer design are comfortable
+          accessing health services. Over the years, educational interventions
+          have proved efficient as a vital component in promoting attitudinal
+          change and improving service delivery towards stigmatized groups.
+          There is established effectiveness and application of online programs
+          to reduce stigma among healthcare workers. Based on these, this
+          project aims to develop an online stigma reduction education program
+          for healthcare providers working with people who inject drugs. The
+          online stigma reduction education program aims to equip healthcare
+          providers with the knowledge and skills necessary to reduce stigma
+          associated with injection drug use, thereby improving access to skin
+          and soft tissue infections support and treatment for people who inject
+          drugs.
         </p>
         <hr />
       </div>

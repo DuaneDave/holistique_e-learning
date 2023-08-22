@@ -227,6 +227,10 @@
   .ctaContainer > div span a {
     margin-top: unset;
   }
+
+  .content p {
+    max-width: 25ch;
+  }
 }
 
 @media (min-width: 968px) {
