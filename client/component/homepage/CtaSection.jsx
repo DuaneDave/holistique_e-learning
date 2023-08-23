@@ -1,14 +1,20 @@
-import React from 'react';
+'use client';
+
+import { useContext } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import DisplayCard from '../ui/Cards';
+import { AuthContext } from '@store/authContext';
 
+import DisplayCard from '../ui/Cards';
 import professionals from '../../public/assets/images/professionals.png';
 
 import styles from './homepage.module.css';
 
 function CtaSection() {
+  const { user } = useContext(AuthContext);
+  const route = user ? '/courses' : '/login';
+
   return (
     <section className={`container ${styles.cta}`}>
       <DisplayCard className={`grid-2 gap-lg ${styles.ctaContainer}`}>
@@ -28,7 +34,7 @@ function CtaSection() {
 
           <span className="flex flex-fluid">
             <p>TAKE THE COURSE FOR FREE</p>
-            <Link href="/">Learn more</Link>
+            <Link href={route}>Learn more</Link>
           </span>
         </div>
       </DisplayCard>
