@@ -27,7 +27,15 @@ function CardSection() {
 
             <div className={`flex flex-col ${styles.cardContent}`}>
               <h3 className="text-center">{resource.title}</h3>
-              <button>Learn more</button>
+              <button>
+                <a
+                  href={resource.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Learn more
+                </a>
+              </button>
             </div>
           </Card>
         ))}
