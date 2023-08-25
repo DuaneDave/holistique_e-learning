@@ -40,10 +40,7 @@ function SignupForm() {
           }}
           className={`flex flex-col ${styles.form}`}
         >
-          <AuthHeader
-            text="Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry."
-          />
+          <AuthHeader text="Register to access the online stigma-reduction education course and other project resources." />
 
           <div className={`flex flex-col ${styles.inputWrapper}`}>
             <Input
