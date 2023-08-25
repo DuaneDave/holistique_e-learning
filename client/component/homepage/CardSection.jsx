@@ -1,5 +1,10 @@
-import React from 'react';
+'use client';
+
+import { useContext } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+
+import { AuthContext } from '@/store/authContext';
 
 import DisplayCard from '../ui/Cards';
 
@@ -10,6 +15,8 @@ import headeStyle from '@public/assets/design/heading style.png';
 import styles from './homepage.module.css';
 
 function CardSection() {
+  const { user } = useContext(AuthContext);
+
   return (
     <section className={styles.cardSection}>
       <div className={`container flex flex-col ${styles.cardContainer}`}>
@@ -41,9 +48,9 @@ function CardSection() {
                 {card.description}
 
                 <button>
-                  <a href={card.link} target="_blank" rel="noopener noreferrer">
+                  <Link href={user ? `/info/${card.id}` : `/login`}>
                     Learn More
-                  </a>
+                  </Link>
                 </button>
               </p>
             </div>

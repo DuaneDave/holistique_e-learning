@@ -38,7 +38,8 @@ function Header() {
           path === '/project-background' ||
           path === '/resources' ||
           path.includes('/courses') ||
-          path === '/community'
+          path === '/community' ||
+          path.includes('/info')
             ? styles.navBg
             : ''
         }`}
