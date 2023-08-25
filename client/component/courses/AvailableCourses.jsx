@@ -50,6 +50,7 @@ async function AvailableCourses() {
                 </span>
               </span>
             </div>
+
             <Link href={`/courses/${course._id}`}>VIEW MODULE DETAILS</Link>
           </Card>
         ))}
