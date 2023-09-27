@@ -14,7 +14,7 @@ async function AvailableCourses() {
   return (
     <section className={`container ${styles.availableModule}`}>
       <Image src={design} alt="design" aria-hidden="true" />
-      <h2>Available Modules</h2>
+      <h2>Available Modules.</h2>
 
       <div className={`grid ${styles.modules}`}>
         {courses?.map((course) => (
