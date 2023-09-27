@@ -1,0 +1,48 @@
+.resources {
+  padding-block: 3rem;
+}
+
+.card {
+  border: 1.5px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 6px 5px 0px rgba(0, 0, 0, 0.15);
+}
+
+.card span {
+  background: var(--tertiary-color);
+  align-self: center;
+  margin-top: -1rem;
+  font-size: 0.95rem;
+  padding: 0.3rem 2rem;
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.card h3 {
+  color: var(--primary-color);
+  margin-top: 1.5rem;
+}
+
+.card p {
+  color: var(--tertiary-color-dark);
+  margin-top: 1rem;
+}
+
+.card button {
+  background: none;
+  align-self: center;
+  padding: 0.5rem 3rem;
+  margin-top: 2rem;
+  border: 1px solid var(--tertiary-color);
+  border-radius: var(--radius-2);
+  color: var(--tertiary-color);
+}
+
+.cardContent {
+  padding: 0 2rem 2rem 2rem;
+}
+
+@media (min-width: 768px) {
+  .resources {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

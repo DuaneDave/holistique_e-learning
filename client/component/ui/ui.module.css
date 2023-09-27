@@ -1,0 +1,200 @@
+.card > img {
+  border-radius: var(--radius-1);
+  box-shadow: 13px 7px 22px 0px #00000040;
+}
+
+.card h2 {
+  font-size: var(--heading-3);
+  color: var(--tertiary-color);
+  margin-bottom: 1rem;
+}
+
+.card h2 span {
+  color: var(--primary-color);
+}
+
+.card button {
+  padding: 0.5 3rem;
+  border-radius: var(--radius-2);
+}
+
+.portraitCard {
+  position: relative;
+  border-radius: 0.5rem;
+  padding: 0, 5rem 0.3rem;
+  background: var(--secondary-color-4);
+}
+
+.portraitCard h3 {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: var(--tertiary-color-dark-1);
+  font-weight: 500;
+}
+
+.portraitCard p {
+  font-size: 1rem;
+  color: var(--secondary-color-1);
+}
+
+.profilecontainer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color:rgba(151, 151, 151, 0.733);
+}
+
+.profileheading {
+  align-items: center;
+  margin-top: 0.5rem;
+  justify-content: center;
+  gap: 2.2rem;
+}
+
+.backarrowbutton {
+  background-color: var(--primary-color-2);
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem !important;
+  width: 40px;
+  height: 40px;
+}
+
+.backarrow {
+  width: 22px;
+  object-fit: contain;
+}
+
+.checkoutprofile {
+  border: none;
+  height: auto !important;
+  width: auto !important;
+  cursor: pointer;
+  padding: 0 !important;
+  background-color: transparent !important;
+}
+
+.checkoutimage {
+  object-fit: contain;
+  width: 30px;
+  height: 30px;
+}
+
+.profileheading > h2 {
+  font-size: var(--text-md);
+  color: black;
+  font-weight: var(--semi-bold);
+}
+
+.profilecontainer > div {
+  background-color: white;
+  border-radius: 0.9rem;
+  max-width: 310px;
+}
+
+.profilecontainer > div > form {
+  padding-inline: 2rem;
+}
+
+.profilecontainer > div {
+  padding: 0.7rem 0;
+}
+
+.modalForm > div {
+  text-align: left;
+  width: 100%;
+}
+
+.uploadImages {
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+.uploadbutton {
+  border: none;
+  height: auto !important;
+  width: auto !important;
+  cursor: pointer;
+  padding: 0 !important;
+  background-color: transparent !important;
+  position: absolute;
+  bottom: 15px;
+  right: -1px;
+}
+
+.uploadimage {
+  border-radius: 100%;
+  object-fit: contain;
+}
+
+.avatar {
+  object-fit: contain;
+}
+
+.uploadImages > div > img {
+  border-radius: 100%;
+}
+
+.uploadImages img:nth-child(2) {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.upload {
+  background-color: var(--primary-color-2);
+  padding: 0.2rem;
+}
+
+.modalForm > div input {
+  padding: 0.8rem 0.65rem;
+  border-radius: 0.2rem;
+  font-size: var(--text-md);
+  border: var(--tertiary-color-dark-1) 1px solid;
+}
+
+.modalForm > div input,
+.modalForm > div label {
+  color: var(--tertiary-color-dark-1);
+}
+
+.modalForm > div label {
+  font-size: 0.6rem;
+}
+
+.formlogout {
+  border-radius: 0.4rem !important;
+  color: white;
+  padding: 1rem 0.1rem !important;
+  display: block;
+  margin-top: 0.9rem;
+  width: 100%;
+  font-size: var(--text-lg);
+  max-width: 250px;
+  margin-bottom: 0.9rem;
+  background-color: var(--accent-color-6) !important;
+}
+
+@media (min-width: 768px) {
+  .profilecontainer > div {
+    max-width: 370px;
+    margin: 0 auto;
+  }
+
+  .profileheading {
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .profileheading {
+    gap: 3rem;
+  }
+
+  .formlogout {
+    max-width: 310px;
+  }
+}

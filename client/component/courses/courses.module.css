@@ -1,0 +1,147 @@
+.coursesContainer {
+  background: rgba(157, 204, 255, 0.2);
+  padding: 2rem 0;
+}
+
+.faqSection h2,
+.availableModule h2,
+.courses h1 {
+  color: var(--tertiary-color-dark);
+  font-weight: var(--medium);
+  font-size: var(--heading-4);
+}
+
+.module,
+.card {
+  background: var(--secondary-color);
+  padding: 1rem;
+}
+
+.cardContent {
+  padding: 1rem 0;
+}
+
+.cardContent h3 {
+  color: var(--tertiary-color-dark);
+  font-weight: var(--medium);
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  margin-bottom: 1rem;
+}
+
+.cardContent > span {
+  color: var(--tertiary-color-dark);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.cardContent > span img {
+  width: 30px;
+  height: 30px;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+}
+
+.cardContent > span svg {
+  margin-right: 0.5rem;
+}
+
+.cardContent p {
+  color: var(--primary-color) !important;
+}
+
+.courseProgress p {
+  align-self: flex-end;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.progressBar {
+  height: 8px;
+  border-radius: var(--radius-pill);
+  background: var(--secondary-color-3);
+}
+
+.progressBar span {
+  height: 100%;
+  border-radius: var(--radius-pill);
+  background: var(--primary-color-2);
+}
+
+.slideControl {
+  margin-left: auto;
+  position: absolute;
+  right: 0.3rem;
+  bottom: 0.5rem;
+  z-index: 9;
+}
+
+.slideControl div {
+  background: var(--primary-color-2);
+  border-radius: 0 !important;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.slideControl div:first-of-type {
+  transform: rotate(180deg);
+}
+
+.modules {
+  gap: 2rem;
+}
+
+.module {
+  box-shadow: 0px 18px 30px 0px rgba(47, 50, 125, 0.25);
+}
+
+.module a {
+  align-self: flex-end;
+  margin-top: 1.5rem;
+  color: var(--accent-color-2);
+}
+
+.duration {
+  justify-content: space-between;
+  font-size: 1rem;
+}
+
+.duration p {
+  color: var(--tertiary-color-dark);
+}
+
+.duration span > span {
+  color: #fdb022;
+}
+
+.availableModule > img {
+  margin: 0 0 -2rem -2rem;
+  width: 80px;
+  height: 80px;
+}
+
+.faqSection {
+  background: #ebf5ff;
+  border-radius: var(--radius-1);
+  padding: 5rem 3em;
+  margin-block: 4rem;
+}
+
+.faqSection p {
+  color: rgba(0, 0, 0, 0.9);
+  padding-block: 1.2rem 2rem;
+}
+
+.faqSection a {
+  background: var(--primary-color-2);
+  color: var(--secondary-color);
+  padding: 0.5rem 2rem;
+  border-radius: var(--radius-2);
+  font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  .modules {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

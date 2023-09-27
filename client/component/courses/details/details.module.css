@@ -1,0 +1,196 @@
+.detailsContainer > div {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.controls {
+  margin-block: 2rem 0.5rem;
+}
+
+.controls button {
+  padding: 0.7rem 2rem;
+  border-radius: 0.5rem;
+  background: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: var(--semi-bold);
+}
+
+.controls button:last-of-type {
+  background: var(--primary-color-2);
+  color: var(--secondary-color);
+}
+
+.controls h1 {
+  font-size: clamp(1rem, 2vw, 1.8rem);
+  color: rgba(0, 0, 0, 0.9);
+  font-weight: var(--medium);
+  margin-block: 1.5rem 0.6rem;
+}
+
+.controls p {
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: var(--medium);
+}
+
+.controls p span {
+  color: #2196f3;
+}
+
+.lessonsBg {
+  background: rgba(157, 204, 255, 0.2);
+  padding-block: 2rem;
+}
+
+.lesson {
+  justify-content: space-between;
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  margin-bottom: 1.5rem;
+  font-weight: var(--medium) !important;
+  color: rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+}
+
+.comments,
+.transcript {
+  overflow-y: auto;
+  height: 500px;
+}
+
+.active {
+  color: #33efa0;
+}
+
+.comments::-webkit-scrollbar,
+.transcript::-webkit-scrollbar {
+  width: 10px;
+  background: rgba(48, 133, 152, 0.15);
+  border-radius: 20px;
+}
+
+.comments::-webkit-scrollbar-thumb,
+.transcript::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background: rgba(38, 45, 118, 0.72);
+}
+
+.transcript {
+  border-radius: 10px;
+  border: 2.5px solid rgba(0, 0, 0, 0.1);
+  background: #fff;
+  color: var(--tertiary-color-dark);
+  padding: 2rem;
+  box-shadow: 7px 4px 7px 4px rgba(0, 0, 0, 0.1);
+}
+
+.spacing {
+  padding: 2rem 1rem;
+}
+
+.cta h2,
+.commentContainer h2,
+.comment h2 {
+  color: var(--tertiary-color-dark);
+  font-weight: var(--medium);
+  margin-block: 2rem 1rem;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
+.cta h2 {
+  color: var(--tertiary-color);
+}
+
+.cta > div p {
+  color: var(--tertiary-color-dark);
+}
+
+.comments,
+.form textarea {
+  border-radius: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 2px 2px 1px 0 rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+.form textarea {
+  height: 170px;
+  resize: none;
+  color: inherit;
+  font-family: inherit;
+}
+
+.form textarea:focus {
+  outline: 1px solid var(--primary-color-2);
+}
+
+.form button {
+  align-self: flex-end;
+  margin-top: 1rem;
+  padding: 0.7rem 2rem;
+  border-radius: 0.5rem;
+  background: var(--primary-color-2);
+  color: var(--secondary-color);
+  font-weight: var(--semi-bold);
+}
+
+.comments {
+  color: var(--tertiary-color-dark);
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+}
+
+.comments li {
+  margin-bottom: 1.5rem;
+}
+
+.comments li > svg,
+.comments li > img {
+  margin-right: 1rem;
+  width: 40px;
+  height: 40px;
+}
+
+.comments li > svg {
+  color: #ccc;
+}
+
+.comments li > div {
+  justify-content: space-between;
+}
+
+.actions {
+  margin-left: auto;
+}
+
+.actions > button {
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.cta {
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-block: 3rem;
+}
+
+.cta h2 {
+  margin-block: 0;
+}
+
+@media (min-width: 768px) {
+  .detailsContainer {
+    height: 70dvh;
+  }
+
+  .detailsContainer video {
+    object-fit: cover;
+  }
+
+  .spacing {
+    padding: 2rem 3rem;
+  }
+
+  .comments,
+  .form textarea {
+    padding: 1rem 2rem;
+  }
+}
